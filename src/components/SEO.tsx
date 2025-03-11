@@ -12,6 +12,7 @@ type SEOProps = {
 const SEO: React.FC<SEOProps> = ({ title, description, keywords, url, image }) => {
   return (
     <Helmet>
+      <meta property="og:type" content="website" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords.join(", ")} />
       <meta property="og:title" content={title} />
