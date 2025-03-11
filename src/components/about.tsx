@@ -139,7 +139,7 @@ export default function About() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {skillCategories.map((item, index) => (
-              <div key={index} className={`p-4 rounded-lg ${themeColors.skillCard} text-center hover:shadow-md transition-shadow duration-300`}>
+              <div key={index} className={`p-4 rounded-lg ${themeColors.card}  ${themeColors.border} border text-center hover:shadow-md transition-shadow duration-300`}>
                 <div className={`font-bold mb-2 ${themeColors.heading}`}>{item.category}</div>
                 <div className={`text-sm ${themeColors.muted}`}>
                   {item.skills}
