@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Projects from "./components/project";
 import About from "./components/about";
-import SEO from "./components/SEO";
 import { useDarkModeStore } from "./utils/useDarkModeStore";
 
 export default function App() {
@@ -32,13 +31,6 @@ export default function App() {
     <div
       className={`min-h-screen ${themeColors.bg} ${themeColors.text} transition-colors duration-300`}
     >
-      <SEO
-        title="Adhishtanaka Thiramithu Kulasooriya"
-        description="A passionate Computer Science student specializing in AI integration for software development. Rather than focusing solely on consumer products, I develop robust tools that empower other developers to create exceptional applications."
-        keywords={["Adhishtanaka", "Thiramithu Kulasooriya", "AI", "Software Development", "Developer", "Computer Science"]}
-        url="https://adhishtanaka.github.io/Portfolio/"
-        image="https://adhishtanaka.github.io/Portfolio/adhishtanaka.png"
-      />
       {/* Navigation */}
       <nav
         className={`fixed w-full z-10 ${
