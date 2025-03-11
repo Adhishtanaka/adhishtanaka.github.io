@@ -48,35 +48,7 @@ export default function About() {
     }
   ];
 
-  // Custom Stack Overflow icon since it's not in Lucide
-  const StackOverflowIcon = ({ className, size = 24 }) => (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width={size} 
-      height={size} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      className={className}
-    >
-      <path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012z" />
-      <path d="M6.111 19.731H16.85v-2.137H6.111v2.137z" />
-      <path d="M6.362 14.561l10.258 2.137.444-2.093-10.258-2.138-.444 2.094z" />
-      <path d="M7.505 9.952l9.523 4.44.898-1.93-9.524-4.44-.897 1.93z" />
-      <path d="M9.761 5.763l8.022 6.682 1.344-1.612-8.022-6.683-1.344 1.613z" />
-      <path d="M14.333 0l-1.79 1.335 6.243 8.381 1.79-1.336L14.334 0z" />
-    </svg>
-  );
-
-  // Add Stack Overflow to social links
-  socialLinks.splice(2, 0, {
-    icon: ({ className, size }) => <StackOverflowIcon className={className} size={size} />,
-    url: "https://stackoverflow.com/users/23522327/adhishtanaka-kulasooriya", 
-    label: "Stack Overflow"
-  });
+  
   const skillCategories = [
     {
       category: "Programming Languages",
@@ -202,7 +174,7 @@ export default function About() {
             </div>
             
             <div className="mt-2 text-center md:text-left">
-              <p className={`${themeColors.text} mb-4`}>
+              <p className={`${themeColors.text} my-4 `}>
                 Feel free to reach out for collaborations or just a chat about technology!
               </p>
               
@@ -213,3 +185,4 @@ export default function About() {
     </motion.section>
   );
 }
+
