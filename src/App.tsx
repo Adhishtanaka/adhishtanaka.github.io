@@ -28,19 +28,16 @@ export default function App() {
       : "bg-slate-200 hover:bg-slate-300",
   };
   
-  
-  
-
   return (
     <div
       className={`min-h-screen ${themeColors.bg} ${themeColors.text} transition-colors duration-300`}
     >
       <SEO
-        title="Adhishtanaka Thirumithu Kulasooriya"
+        title="Adhishtanaka Thiramithu Kulasooriya"
         description="A passionate Computer Science student specializing in AI integration for software development. Rather than focusing solely on consumer products, I develop robust tools that empower other developers to create exceptional applications."
-        keywords={["Adhishtanaka", "Thirumithu Kulasooriya", "AI", "Software Development", "Developer", "Computer Science"]}
+        keywords={["Adhishtanaka", "Thiramithu Kulasooriya", "AI", "Software Development", "Developer", "Computer Science"]}
         url="https://adhishtanaka.github.io/Portfolio/"
-        image="https://adhishtanaka.github.io/Portfolio/assets/images/profile.png"
+        image="https://github.com/adhishtanaka.png"
       />
       {/* Navigation */}
       <nav
