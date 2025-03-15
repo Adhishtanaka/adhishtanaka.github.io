@@ -11,20 +11,22 @@ export default function App() {
   const themeColors = {
     bg: darkMode ? "bg-slate-900" : "bg-slate-50",
     text: darkMode ? "text-slate-100" : "text-slate-900",
-    heading: darkMode ? "text-[#a0b8d8]" : "text-[#1e3a5f]",
-    subheading: darkMode ? "text-[#81a4c7]" : "text-[#2c5282]",
-    accent: darkMode ? "text-[#64b5f6]" : "text-[#1976d2]",
-    subtle: darkMode ? "bg-[#1e293b]" : "bg-blue-50",
-    muted: darkMode ? "text-[#90caf9]" : "text-[#2196f3]",
-    skillCard: darkMode ? "bg-[#1e3a5f]" : "bg-blue-100",
+    heading: darkMode ? "text-black-400" : "text-black-700",
+    subheading: darkMode ? "text-black-300" : "text-black-600",
+    accent: darkMode ? "text-cyan-400" : "text-cyan-600",
+    subtle: darkMode ? "bg-slate-800/50" : "bg-black-50",
+    muted: darkMode ? "text-slate-400" : "text-slate-500",
+    skillCard: darkMode ? "bg-slate-800" : "bg-white",
     card: darkMode ? "bg-slate-800" : "bg-white",
-    border: darkMode ? "border-slate-700" : "border-slate-300",
+    border: darkMode ? "border-slate-700" : "border-slate-200",
     button: darkMode
-      ? "bg-[#2196f3] hover:bg-[#1976d2]"
-      : "bg-[#1976d2] hover:bg-[#1565c0]",
+      ? "bg-cyan-500 hover:bg-cyan-600"
+      : "bg-cyan-600 hover:bg-cyan-700",
     secondaryButton: darkMode
       ? "bg-slate-700 hover:bg-slate-600"
-      : "bg-slate-200 hover:bg-slate-300",
+      : "bg-white hover:bg-slate-100",
+    navBg: darkMode ? "bg-slate-900/95" : "bg-white/95",
+    shadow: darkMode ? "" : "shadow-lg",
   };
   
   return (
@@ -33,24 +35,45 @@ export default function App() {
     >
       {/* Navigation */}
       <nav
-        className={`fixed w-full z-10 ${
-          darkMode ? "bg-gray-900/90" : "bg-white/90"
-        } backdrop-blur-md py-4 ${themeColors.border} border-b`}
+        className={`fixed w-full z-10 ${themeColors.navBg} backdrop-blur-md py-4 ${themeColors.shadow}`}
       >
-        <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="container mx-auto px-6 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             className="font-bold text-xl"
           >
-            <span className={themeColors.accent}>A</span>
+            <span className={`${themeColors.accent} font-serif text-2xl`}>A</span>
           </motion.div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
+            <div className="hidden md:flex space-x-6">
+              <button
+                onClick={() => setActiveTab("about")}
+                className={`px-3 py-1 rounded-md transition-colors font-medium ${
+                  activeTab === "about" 
+                    ? `${themeColors.accent} border-b-2 border-cyan-500` 
+                    : `hover:${themeColors.muted}`
+                }`}
+              >
+                About
+              </button>
+              <button
+                onClick={() => setActiveTab("projects")}
+                className={`px-3 py-1 rounded-md transition-colors font-medium ${
+                  activeTab === "projects" 
+                    ? `${themeColors.accent} border-b-2 border-cyan-500` 
+                    : `hover:${themeColors.muted}`
+                }`}
+              >
+                Projects
+              </button>
+            </div>
+
             <button
               onClick={() => toggleDarkMode()}
-              className={`p-2 rounded-full ${themeColors.secondaryButton}`}
+              className={`p-2 rounded-full ${themeColors.secondaryButton} transition-colors duration-200`}
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
@@ -77,30 +100,11 @@ export default function App() {
                 </svg>
               )}
             </button>
-
-            <div className="hidden md:flex space-x-4">
-              <button
-                onClick={() => setActiveTab("about")}
-                className={`px-3 py-1 rounded-md transition-colors ${
-                  activeTab === "about" ? themeColors.accent : ""
-                }`}
-              >
-                About
-              </button>
-              <button
-                onClick={() => setActiveTab("projects")}
-                className={`px-3 py-1 rounded-md transition-colors ${
-                  activeTab === "projects" ? themeColors.accent : ""
-                }`}
-              >
-                Projects
-              </button>
-            </div>
           </div>
         </div>
       </nav>
 
-      <main className="container mx-auto px-4 pt-24 pb-16">
+      <main className="container mx-auto px-6 pt-28 pb-16">
         {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -109,24 +113,32 @@ export default function App() {
           className="text-center mb-16"
         >
           <motion.h1
-            className="text-4xl md:text-5xl font-bold"
+            className="text-4xl md:text-5xl font-bold mb-4 tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <span className={themeColors.accent}>Adhishtanaka</span> Thiramithu
-            Kulasooriya
+            <span className="block mt-2">Kulasooriya</span>
           </motion.h1>
+          <motion.p
+            className={`text-lg ${themeColors.muted} max-w-2xl mx-auto`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            Computer Science Student • AI Enthusiast • Software Developer
+          </motion.p>
         </motion.section>
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex justify-center mb-10">
           <div
-            className={`flex rounded-lg ${themeColors.card} p-1 ${themeColors.border} border`}
+            className={`flex rounded-lg ${themeColors.card} ${themeColors.border} border p-1 ${themeColors.shadow}`}
           >
             <button
               onClick={() => setActiveTab("about")}
-              className={`px-4 py-2 rounded-md transition-colors ${
+              className={`px-4 py-2 rounded-md transition-colors font-medium ${
                 activeTab === "about" ? themeColors.button : ""
               }`}
             >
@@ -134,7 +146,7 @@ export default function App() {
             </button>
             <button
               onClick={() => setActiveTab("projects")}
-              className={`px-4 py-2 rounded-md transition-colors ${
+              className={`px-4 py-2 rounded-md transition-colors font-medium ${
                 activeTab === "projects" ? themeColors.button : ""
               }`}
             >
@@ -143,18 +155,15 @@ export default function App() {
           </div>
         </div>
 
-        
         <AnimatePresence mode="wait">
           {activeTab === "about" && About()}
-
           {activeTab === "projects" && Projects()}
-
         </AnimatePresence>
       </main>
 
-      <footer className={`py-6 ${themeColors.border} border-t`}>
-        <div className="container mx-auto px-4 text-center">
-          <p className="opacity-70">
+      <footer className={`py-8 ${themeColors.border} border-t`}>
+        <div className="container mx-auto px-6 text-center">
+          <p className={`${themeColors.muted} text-sm`}>
             © {new Date().getFullYear()} Adhishtanaka Thiramithu Kulasooriya.
             All rights reserved.
           </p>

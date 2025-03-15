@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useDarkModeStore } from "../utils/useDarkModeStore";
-import { Linkedin, Twitter, Github, MailIcon } from "lucide-react";
+import { Linkedin, Twitter, Github, Mail, Code, Server, Database, Terminal } from "lucide-react";
+
 
 export default function About() {
   const { darkMode } = useDarkModeStore();
@@ -8,67 +9,82 @@ export default function About() {
   const themeColors = {
     bg: darkMode ? "bg-slate-900" : "bg-slate-50",
     text: darkMode ? "text-slate-100" : "text-slate-900",
-    heading: darkMode ? "text-[#a0b8d8]" : "text-[#1e3a5f]",
-    subheading: darkMode ? "text-[#81a4c7]" : "text-[#2c5282]",
-    accent: darkMode ? "text-[#64b5f6]" : "text-[#1976d2]",
-    subtle: darkMode ? "bg-[#1e293b]" : "bg-blue-50",
-    muted: darkMode ? "text-[#90caf9]" : "text-[#2196f3]",
-    skillCard: darkMode ? "bg-[#1e3a5f]" : "bg-blue-100",
+    heading: darkMode ? "text-black-400" : "text-black-700",
+    subheading: darkMode ? "text-black-300" : "text-black-600",
+    accent: darkMode ? "text-cyan-400" : "text-cyan-600",
+    subtle: darkMode ? "bg-slate-800/50" : "bg-black-50",
+    muted: darkMode ? "text-slate-400" : "text-slate-500",
+    skillCard: darkMode ? "bg-slate-800" : "bg-white",
     card: darkMode ? "bg-slate-800" : "bg-white",
-    border: darkMode ? "border-slate-700" : "border-slate-300",
+    border: darkMode ? "border-slate-700" : "border-slate-200",
     button: darkMode
-      ? "bg-[#2196f3] hover:bg-[#1976d2]"
-      : "bg-[#1976d2] hover:bg-[#1565c0]",
+      ? "bg-cyan-500 hover:bg-cyan-600"
+      : "bg-cyan-600 hover:bg-cyan-700",
     secondaryButton: darkMode
       ? "bg-slate-700 hover:bg-slate-600"
-      : "bg-slate-200 hover:bg-slate-300",
+      : "bg-white hover:bg-slate-100",
+    shadow: darkMode ? "shadow-slate-900" : "shadow-md",
   };
 
-  // Social links - replace with your actual URLs later
+  // Social links
   const socialLinks = [
     { 
       icon: Linkedin, 
-      url: "https://www.linkedin.com/in/adhishtanaka/", // Replace with your LinkedIn URL
+      url: "https://www.linkedin.com/in/adhishtanaka/",
       label: "LinkedIn"
     },
     { 
       icon: Twitter, 
-      url: "https://x.com/adhishtanaka", // Replace with your Twitter/X URL
+      url: "https://x.com/adhishtanaka",
       label: "Twitter/X"
     },
     { 
       icon: Github, 
-      url: "https://github.com/adhishtanaka", // Replace with your GitHub URL
+      url: "https://github.com/adhishtanaka",
       label: "GitHub"
     },
     { 
-      icon: MailIcon, 
-      url: "mailto:kulasoooriyaa@gmail.com", // Replace with your email
+      icon: Mail, 
+      url: "mailto:kulasoooriyaa@gmail.com",
       label: "Email"
     }
   ];
 
-  
+  // Skills with icons
   const skillCategories = [
     {
       category: "Programming Languages",
       skills: "TypeScript, Python, Java, C#, Dart",
+      icon: Code
     },
     {
       category: "Cloud & Backend Services",
       skills: "Firebase, Supabase, OpenAI, Gemini",
+      icon: Server
     },
     {
       category: "Databases",
       skills: "MongoDB, MySQL, Firebase Firestore",
+      icon: Database
     },
     {
       category: "DevOps & CI/CD",
       skills: "Docker, GitHub Actions, Postman",
+      icon: Terminal
     },
   ];
   
-  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * custom,
+        duration: 0.5
+      }
+    })
+  };
 
   return (
     <motion.section
@@ -79,18 +95,21 @@ export default function About() {
       transition={{ duration: 0.5 }}
       className={`${themeColors.bg} min-h-screen w-full`}
     >
-      <div className="max-w-4xl mx-auto px-4 py-6">
-        {/* Profile Section - Responsive design */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
-            <img 
-              src="https://github.com/adhishtanaka.png" 
-              alt="Profile" 
-              className="w-32 h-32 rounded-full object-cover shadow-md "
-            />
+      <div className="max-w-4xl mx-auto py-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-10">
+           
             
             <div className="text-center md:text-left">
-              <div className={`${themeColors.text} space-y-4`}>
+              <h2 className={`text-2xl font-bold mb-4 ${themeColors.accent}`}>
+                About Me
+              </h2>
+              <div className={`${themeColors.text} space-y-4 leading-relaxed`}>
                 <p>
                   I'm a passionate Computer Science student specializing in{" "}
                   <span className={`${themeColors.accent} font-semibold`}>
@@ -129,60 +148,122 @@ export default function About() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Skills Section - Reorganized and responsive */}
-        <div className="mb-12">
-          <h2 className={`text-2xl font-bold mb-6 ${themeColors.heading} flex items-center`}>
-            <span className="mr-2">#</span>Skills
+
+        {/* Additional section - Testimonials or Education */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          <h2 className={`text-2xl font-bold mb-8 ${themeColors.heading} flex items-center before:content-[''] before:block before:w-8 before:h-1 before:bg-cyan-500 before:mr-3`}>
+            Education
           </h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className={`p-8 rounded-lg ${themeColors.card} ${themeColors.border} border ${themeColors.shadow}`}>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+              <div>
+                <h3 className={`font-bold text-lg ${themeColors.subheading}`}>Bachelor of Computer Science</h3>
+                <p className={`${themeColors.text}`}>NSBM Green University</p>
+              </div>
+              <div className={`${themeColors.muted} text-sm mt-2 md:mt-0`}>2022 - Present</div>
+            </div>
+            
+            <div className={`${themeColors.muted} mt-4`}>
+              <p>I hold a BSc (Honours) in Computer Science from NSBM Green University Town, a UGC-approved degree-awarding institution. The programme provides a broad computing perspective in the first year, focuses on the core Computer Science body of knowledge in the second and third years, includes compulsory industry training in the third year, and offers advanced subject knowledge in the fourth year.</p>
+            </div>
+          </div>
+        </motion.div>
+        
+        {/* Skills Section - Enhanced with icons and animations */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          <h2 className={`text-2xl font-bold mb-8 ${themeColors.heading} flex items-center before:content-[''] before:block before:w-8 before:h-1 before:bg-cyan-500 before:mr-3`}>
+            Technical Skills
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((item, index) => (
-              <div key={index} className={`p-4 rounded-lg ${themeColors.card}  ${themeColors.border} border text-center hover:shadow-md transition-shadow duration-300`}>
+              <motion.div 
+                key={index} 
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.03 }}
+                className={`p-6 rounded-lg ${themeColors.card} ${themeColors.border} border ${themeColors.shadow} flex flex-col items-center text-center hover:border-cyan-500 transition-all duration-300`}
+              >
+                <div className={`p-3 rounded-full ${themeColors.subtle} mb-4`}>
+                  <item.icon className={`w-6 h-6 ${themeColors.accent}`} />
+                </div>
                 <div className={`font-bold mb-2 ${themeColors.heading}`}>{item.category}</div>
                 <div className={`text-sm ${themeColors.muted}`}>
                   {item.skills}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Contact Section - New addition */}
-        <div className="mb-5">
-          <h2 className={`text-2xl font-bold mb-6 ${themeColors.heading} flex items-center`}>
-            <span className="mr-2">#</span>Connect With Me
+        {/* Contact Section - Enhanced with animations and improved design */}
+        <motion.div 
+          className="mb-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          <h2 className={`text-2xl font-bold mb-8 ${themeColors.heading} flex items-center before:content-[''] before:block before:w-8 before:h-1 before:bg-cyan-500 before:mr-3`}>
+            Connect With Me
           </h2>
           
-          <div className={`p-6 rounded-lg ${themeColors.subtle} ${themeColors.border} border`}>
-            <div className="flex flex-wrap justify-center md:justify-start gap-6">
+          <div className={`p-8 rounded-lg ${themeColors.card} ${themeColors.border} border ${themeColors.shadow}`}>
+            <div className="text-center md:text-left mb-8">
+              <p className={`${themeColors.text} text-lg`}>
+                I'm always open to interesting conversations, collaborations, and new opportunities.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center md:justify-center gap-8">
               {socialLinks.map((link, index) => (
-                <a 
+                <motion.a 
                   key={index}
                   href={link.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex flex-col items-center"
+                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 0.2 + (index * 0.1), duration: 0.5 }
+                  }}
                 >
-                  <div className={`p-3 rounded-full ${themeColors.card} ${themeColors.border} border hover:scale-110 transition-transform duration-300`}>
-                    <link.icon className={`w-6 h-6 ${themeColors.accent}`} size={24} />
+                  <div className={`p-4 rounded-full ${themeColors.subtle} hover:bg-cyan-500/20 transition-colors duration-300`}>
+                    <link.icon className={`w-6 h-6 ${themeColors.accent}`} />
                   </div>
-                  <span className={`mt-2 text-sm ${themeColors.text}`}>{link.label}</span>
-                </a>
+                  <span className={`mt-2 text-sm font-medium ${themeColors.text}`}>{link.label}</span>
+                </motion.a>
               ))}
             </div>
             
-            <div className="mt-2 text-center md:text-left">
-              <p className={`${themeColors.text} my-4 `}>
-                Feel free to reach out for collaborations or just a chat about technology!
-              </p>
-              
+            <div className="mt-8 text-center">
+              <div className={`inline-flex items-center ${themeColors.muted}`}>
+                <div className="h-px w-16 bg-slate-400/30 mr-4"></div>
+                <p className="text-sm">Let's build something amazing together</p>
+                <div className="h-px w-16 bg-slate-400/30 ml-4"></div>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
 }
-
