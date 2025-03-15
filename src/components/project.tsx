@@ -53,7 +53,14 @@ export default function Projects() {
       icon: "🎨", 
       link: "https://github.com/Adhishtanaka/avtxt",
       tags: ["Node.js", "SVG", "Library"] 
-    }
+    },
+    {
+      name: "dwnld", 
+      desc: "A fast and lightweight cross-platform download manager, offering a powerful alternative to IDM.",
+      icon: "📥", 
+      link: "https://github.com/Adhishtanaka/dwnld",
+      tags: ["Java", "JavaFX", "Download Manager"] 
+    }    
   ];
 
   const cardVariants = {
