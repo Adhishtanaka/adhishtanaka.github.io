@@ -66,6 +66,13 @@ export default function Projects() {
       link: "https://github.com/Adhishtanaka/dwnld",
       tags: ["Java", "JavaFX", "Download Manager"],
     },
+    {
+      name: "SysGen",
+      desc: "A CLI tool for generating AI-powered synthetic datasets from Markdown files.",
+      icon: "📊",
+      link: "https://github.com/Adhishtanaka/sysgen",
+      tags: ["AI", "Data Science", "CLI"],
+    }
   ];
 
   const cardVariants = {
