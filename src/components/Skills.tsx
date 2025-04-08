@@ -9,7 +9,7 @@ const Skills: React.FC = () => {
     },
     {
       title: "Cloud & Backend Services",
-      skills: ["Firebase", "Supabase", "OpenAI", "Gemini"]
+      skills: ["Firebase", "Supabase", "Netlify" ,"OpenAI" ,"Gemini","Hugging Face"]
     },
     {
       title: "Databases",
@@ -81,7 +81,7 @@ const Skills: React.FC = () => {
                   key={skillIndex} 
                   className="bg-gray-200 text-gray-700 px-3 py-1 rounded-md text-sm"
                   variants={skillVariants}
-                  whileHover={{ scale: 1.05, backgroundColor: "#f3f4f6" }}
+                  whileHover={{ scale: 1.05, backgroundColor: "#e3e3e3" }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   {skill}
