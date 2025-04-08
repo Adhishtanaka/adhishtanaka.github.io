@@ -5,7 +5,7 @@ interface BackgroundGifProps {
   opacity?: number;
 }
 
-const BackgroundGif: React.FC<BackgroundGifProps> = ({ opacity = 0.15 }) => {
+const BackgroundGif: React.FC<BackgroundGifProps> = ({ opacity = 0.25 }) => {
   return (
     <div 
       className="fixed inset-0 w-full h-full z-0 bg-repeat"
@@ -16,7 +16,7 @@ const BackgroundGif: React.FC<BackgroundGifProps> = ({ opacity = 0.15 }) => {
       }}
     >
       {/* Add an overlay for better text readability if needed */}
-      <div className="absolute inset-0 bg-white" style={{ opacity: 0.8 }}></div>
+      <div className="absolute inset-0 bg-white" style={{ opacity: 0.75 }}></div>
     </div>
   );
 };
