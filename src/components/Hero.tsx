@@ -1,66 +1,53 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-const Hero: React.FC = () => {
-  return (
-    <section className="py-12 md:py-20">
-    <motion.div 
-      className="max-w-3xl"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <motion.h1 
-        className="text-4xl md:text-5xl font-bold mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-      >
-        Hi I'm Adhishtanaka Thiramithu Kulasooriya.
-      </motion.h1>
-      <motion.p 
-        className="text-lg md:text-xl text-gray-600 mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-      >
-        My work is mainly focused on AI integration for software development, 
-        creating robust tools that empower other developers to build exceptional applications.
-      </motion.p>
-      <motion.div 
-        className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
-      >
-        <motion.a 
-          href="#contact" 
-          className="group flex items-center text-lg font-medium hover:underline"
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-            Connect with me
-        
-            <motion.span
-              whileHover={{ x: 3 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <ArrowRight className="ml-2" size={20} />
-            </motion.span>
-          </motion.a>
-          <motion.a 
-            href="#" 
-            className="text-gray-500 hover:text-gray-800"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            View Resume
-          </motion.a>
-        </motion.div>
-      </motion.div>
-    </section>
-  );
-};
-
-export default Hero;
+export default function Hero({
+    name,
+    bio,
+    location,
+    cvUrl
+}: {
+    name: string;
+    bio: string;
+    avatarUrl?: string;
+    location?: string;
+    repoCount?: number;
+    followers?: number;
+    following?: number;
+    cvUrl?: string; 
+}) {
+    return (
+        <section className="relative isolate overflow-hidden">
+            <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
+                <div className="grid grid-cols-1 items-start gap-8">
+                    <div>
+                        <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl text-gray-900 dark:text-gray-100">
+                            {name}
+                        </h1>
+                        <p className="mt-4 max-w-[65ch] text-pretty text-base text-gray-600 dark:text-gray-400 sm:text-lg">
+                            {bio}
+                        </p>
+                        {location && (
+                            <p className="mt-2 text-sm text-gray-500 dark:text-gray-500">
+                                Based in {location}
+                            </p>
+                        )}
+                        <div className="mt-6 flex flex-wrap items-center gap-4">
+                            <a
+                                href="#projects"
+                                className="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-2.5 text-sm text-gray-900 dark:text-gray-100 hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                            >
+                                View Projects
+                            </a>
+                            {cvUrl && (
+                                <a
+                                    href={cvUrl}
+                                    download
+                                    className="text-sm underline-offset-4 hover:underline text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" >
+                                    Download CV
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
