@@ -11,7 +11,7 @@ export default function Header({
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-40 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700">
+        <header className="sticky top-0 z-40 backdrop-blur-sm bg-gray-900/80 border-b border-gray-700">
             <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
                 <a href="#home" className="inline-flex items-center gap-2">
                     <span className="font-semibold tracking-tight text-xl">Adhish</span>
@@ -21,7 +21,7 @@ export default function Header({
                         <a
                             key={n.href}
                             href={n.href}
-                            className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                            className="text-gray-400 hover:text-blue-400 transition-colors"
                         >
                             {n.label}
                         </a>
@@ -38,12 +38,12 @@ export default function Header({
                             GitHub
                         </a>
                     )}
-                    
+
                     <a
                         href="https://www.linkedin.com/in/adhishtanaka/"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                         LinkedIn
                     </a>
@@ -52,7 +52,7 @@ export default function Header({
                     {/* Mobile menu button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="sm:hidden p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                        className="sm:hidden p-2 rounded-md text-gray-400 hover:text-blue-400"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

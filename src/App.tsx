@@ -131,7 +131,7 @@ export default function App() {
   return (
     <div
       id="home"
-      className="relative min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 overflow-hidden"
+      className="relative min-h-screen bg-gray-900 text-gray-100 overflow-hidden"
     >
       {/* Low opacity gif background overlay */}
       <div
