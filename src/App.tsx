@@ -155,7 +155,7 @@ export default function App() {
           repoCount={user?.public_repos}
           followers={user?.followers}
           following={user?.following}
-          cvUrl="./CV_K.A.A.T Kulasooriya - Final.pdf"
+          cvUrl="./CV.pdf"
         />
         <About />
         <Projects repos={repos} loading={loading} error={error} />
