@@ -14,7 +14,7 @@ export default function Projects({ repos, loading, error }: { repos: GHRepo[]; l
     return (
         <section id="projects" className="mx-auto max-w-6xl px-4 py-16">
             <div className="mb-8 flex items-end justify-between gap-4">
-                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-gray-100">Projects</h2>
+                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-gray-100">Recently Updated Projects</h2>
                 <div className="h-px flex-1 bg-gray-700" />
             </div>
             {loading && (
