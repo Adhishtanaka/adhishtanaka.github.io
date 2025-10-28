@@ -10,19 +10,19 @@ export default function Achievements() {
         {
             title: "Innovate with Ballerina",
             date: "Oct 2025",
-            description: "WSO2 Top 10 Finalist",
+            description: "WSO2 Competition Top 10 Finalist",
             participant_info: "from 500+ teams"
         },
         {
             title: "NSBM GreenEXE 3.0",
             date: "Oct 2025",
-            description: "NSBM Green University 1st Runner Up",
+            description: "NSBM Green University First Runner Up",
             participant_info: "from 50+ teams"
         },
         {
             title: "InteliHack 5.0 - Datathon",
             date: "June 2025",
-            description: "University of Colombo School of Computing 2nd Runner Up",
+            description: "University of Colombo School of Computing Second Runner Up",
             participant_info: "from 100+ teams"
         }
     ];
@@ -56,14 +56,19 @@ export default function Achievements() {
                             key={index}
                             className="group rounded-xl border border-gray-800 bg-gray-900/50 p-4 transition hover:border-blue-500 hover:shadow-md"
                         >
-                            <div className="flex items-start justify-between gap-3">
-                                <h3 className="font-semibold tracking-tight text-gray-200 group-hover:text-blue-400">
-                                    {achievement.title}
-                                </h3>
-                                <span className="text-xs text-gray-500">{achievement.date}</span>
+                            <div className="space-y-2">
+                                <div className="flex items-start justify-between gap-3">
+                                    <h3 className="font-semibold tracking-tight text-gray-200 group-hover:text-blue-400">
+                                        {achievement.title}
+                                    </h3>
+                                    <span className="text-xs text-gray-500">{achievement.date}</span>
+                                </div>
+                                <div>
+                                    <p className="text-sm font-medium text-blue-400">{achievement.description.split(" ").slice(-2).join(" ")}</p>
+                                    <p className="text-sm text-gray-400">{achievement.description.split(" ").slice(0, -2).join(" ")}</p>
+                                </div>
+                                <p className="text-xs text-gray-600">{achievement.participant_info}</p>
                             </div>
-                            <p className="mt-2 text-sm text-gray-400">{achievement.description}</p>
-                            <p className="mt-1 text-xs text-gray-600">{achievement.participant_info}</p>
                         </div>
                     ))}
                 </div>
