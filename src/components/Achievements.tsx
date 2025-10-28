@@ -10,19 +10,19 @@ export default function Achievements() {
         {
             title: "Innovate with Ballerina",
             date: "Oct 2025",
-            description: "WSO2 Competition Top 10 Finalist",
+            description: "WSO2 Top 10 Finalist",
             participant_info: "from 500+ teams"
         },
         {
             title: "NSBM GreenEXE 3.0",
             date: "Oct 2025",
-            description: "NSBM Green University First Runner Up",
+            description: "NSBM Green University 1st Runner Up",
             participant_info: "from 50+ teams"
         },
         {
             title: "InteliHack 5.0 - Datathon",
             date: "June 2025",
-            description: "University of Colombo School of Computing Second Runner Up",
+            description: "University of Colombo School of Computing 2nd Runner Up",
             participant_info: "from 100+ teams"
         }
     ];
@@ -64,8 +64,16 @@ export default function Achievements() {
                                     <span className="text-xs text-gray-500">{achievement.date}</span>
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-blue-400">{achievement.description.split(" ").slice(-2).join(" ")}</p>
-                                    <p className="text-sm text-gray-400">{achievement.description.split(" ").slice(0, -2).join(" ")}</p>
+                                    <p className="text-sm text-gray-400">
+                                        {achievement.description.includes("Runner Up")
+                                            ? achievement.description.split(/(1st|2nd) Runner Up/)[0]
+                                            : achievement.description.split("Top 10")[0]}
+                                    </p>
+                                    <p className="text-sm font-medium text-blue-400">
+                                        {achievement.description.includes("Runner Up")
+                                            ? achievement.description.match(/(1st|2nd) Runner Up/)?.[0] ?? "Runner Up"
+                                            : "Top 10 Finalist"}
+                                    </p>
                                 </div>
                                 <p className="text-xs text-gray-600">{achievement.participant_info}</p>
                             </div>
