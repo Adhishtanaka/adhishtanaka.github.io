@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/about";
 import Projects from "./components/Projects";
+import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -33,7 +34,7 @@ type GHRepo = {
 
 const GITHUB_USERNAME = "Adhishtanaka";
 
-const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension"];
+const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension", "sllib", "gemilib"];
 
 export default function App() {
   const [user, setUser] = useState<GHUser | null>(null);
@@ -123,6 +124,7 @@ export default function App() {
       { href: "#home", label: "Home" },
       { href: "#about", label: "About" },
       { href: "#projects", label: "Projects" },
+      { href: "#achievements", label: "Achievements" },
       { href: "#contact", label: "Contact" },
     ],
     []
@@ -159,6 +161,7 @@ export default function App() {
         />
         <About />
         <Projects repos={repos} loading={loading} error={error} />
+        <Achievements />
         <Contact />
         <Footer />
       </div>

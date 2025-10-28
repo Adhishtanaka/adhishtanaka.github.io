@@ -14,7 +14,7 @@ export default function Header({
         <header className="sticky top-0 z-40 backdrop-blur-sm bg-gray-900/80 border-b border-gray-700">
             <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
                 <a href="#home" className="inline-flex items-center gap-2">
-                    <span className="font-semibold tracking-tight text-xl">Adhish</span>
+                    <span className="font-semibold tracking-tight text-xl">At</span>
                 </a>
                 <nav className="hidden sm:flex items-center gap-6 text-sm">
                     {nav.map((n) => (
