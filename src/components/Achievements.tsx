@@ -1,86 +1,64 @@
+import { useState } from "react";
+
 type Achievement = {
-    title: string;
-    date: string;
-    description: string;
-    participant_info: string;
+  title: string;
+  date: string;
+  description: string;
+  participant_info: string;
+  borderColor: string;
+  hoverColor: string;
 };
 
 export default function Achievements() {
-    const achievements: Achievement[] = [
-        {
-            title: "Innovate with Ballerina",
-            date: "Oct 2025",
-            description: "WSO2 Top 10 Finalist",
-            participant_info: "from 500+ teams"
-        },
-        {
-            title: "NSBM GreenEXE 3.0",
-            date: "Oct 2025",
-            description: "NSBM Green University 1st Runner Up",
-            participant_info: "from 50+ teams"
-        },
-        {
-            title: "InteliHack 5.0 - Datathon",
-            date: "June 2025",
-            description: "University of Colombo School of Computing 2nd Runner Up",
-            participant_info: "from 100+ teams"
-        }
-    ];
-    return (
-        <section id="achievements" className="mx-auto max-w-6xl px-4 py-16">
-            <div className="mb-8 flex items-end justify-between gap-4">
-                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-gray-900 dark:text-gray-100">Achievements</h2>
-                <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
-            </div>
-            <div className="flex flex-col md:flex-row gap-8">
-                <div className="w-full md:w-3/4">
-                    <div className="mb-8 space-y-4">
-                        <p className="text-pretty text-gray-400">
-                            Throughout my academic journey, I've had the opportunity to participate in various competitive events
-                            and hackathons, showcasing my skills in software development, AI, and problem-solving. These
-                            achievements reflect my commitment to excellence and continuous learning in the field of computer science.
-                        </p>
-                    </div>
-                    <div className="overflow-hidden rounded-xl">
-                        <img
-                            src="/a.png"
-                            alt="Achievements showcase"
-                            className="w-full h-auto rounded-xl"
-                        />
-                    </div>
-                </div>
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const achievements: Achievement[] = [
+    {
+      title: "Innovate with Ballerina",
+      date: "Oct 2025",
+      description: "Top performer among 500+ competing teams in WSO2 Integration Studio & Ballerina hackathon.",
+      participant_info: "Competition / Enterprise Integration",
+      borderColor: "border-alert",
+      hoverColor: "group-hover:text-alert"
+    },
+    {
+      title: "NSBM GreenEXE 3.0",
+      date: "1st Runner Up",
+      description: "Placed 2nd among 50+ teams competing in NSBM's premier software engineering competition.",
+      participant_info: "Software Engineering / Oct 2025",
+      borderColor: "border-amber",
+      hoverColor: "group-hover:text-amber"
+    },
+    {
+      title: "InteliHack 5.0",
+      date: "2nd Runner Up",
+      description: "UCSC Datathon competition focused on data science and ML model optimization.",
+      participant_info: "Data Science / June 2025",
+      borderColor: "border-matrix",
+      hoverColor: "group-hover:text-matrix"
+    }
+  ];
 
-                <div className="w-full md:w-1/4 space-y-4">
-                    {achievements.map((achievement, index) => (
-                        <div
-                            key={index}
-                            className="group rounded-xl border border-gray-800 bg-gray-900/50 p-4 transition hover:border-blue-500 hover:shadow-md"
-                        >
-                            <div className="space-y-2">
-                                <div className="flex items-start justify-between gap-3">
-                                    <h3 className="font-semibold tracking-tight text-gray-200 group-hover:text-blue-400">
-                                        {achievement.title}
-                                    </h3>
-                                    <span className="text-xs text-gray-500">{achievement.date}</span>
-                                </div>
-                                <div>
-                                    <p className="text-sm text-gray-400">
-                                        {achievement.description.includes("Runner Up")
-                                            ? achievement.description.split(/(1st|2nd) Runner Up/)[0]
-                                            : achievement.description.split("Top 10")[0]}
-                                    </p>
-                                    <p className="text-sm font-medium text-blue-400">
-                                        {achievement.description.includes("Runner Up")
-                                            ? achievement.description.match(/(1st|2nd) Runner Up/)?.[0] ?? "Runner Up"
-                                            : "Top 10 Finalist"}
-                                    </p>
-                                </div>
-                                <p className="text-xs text-gray-600">{achievement.participant_info}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+  return (
+    <section id="achievements" className="relative min-h-[60vh] mb-32">
+      <div className="flex flex-col md:block gap-6 md:h-[60vh]">
+        {achievements.map((achievement, index) => (
+          <div
+            key={index}
+            onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+            className={`achievement-card w-full md:w-[400px] md:absolute bg-bg border-3 ${achievement.borderColor} p-6 md:p-8 shadow-[10px_10px_0px_rgba(0,0,0,0.5)] transition-all duration-300 cursor-pointer group ${activeIndex === index ? 'z-[100] scale-105 shadow-[20px_20px_0px_#ff2a00]' : 'z-10 hover:shadow-[20px_20px_0px_#ff2a00] hover:scale-105'}`}
+            style={{ zIndex: activeIndex === index ? 100 : undefined }}
+          >
+            <div className={`text-xl md:text-2xl font-bold mb-2 uppercase ${achievement.hoverColor} transition-colors`}>
+              {achievement.title}
             </div>
-        </section>
-    )
+            <div className="text-base mb-4 opacity-80">{achievement.date}</div>
+            <p className="text-sm md:text-base mb-4">{achievement.description}</p>
+            <div className="text-xs border-t-2 border-current pt-2 mt-4 opacity-70 uppercase">
+              {achievement.participant_info}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

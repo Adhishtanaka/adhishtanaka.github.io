@@ -1,11 +1,14 @@
-import { useEffect, useMemo, useState } from "react";
-import Header from "./components/Header";
+ import { useEffect, useState } from "react";
+import StatusBar from "./components/StatusBar.tsx";
 import Hero from "./components/Hero";
-import About from "./components/about";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Terminal from "./components/Terminal.tsx";
+import MatrixCanvas from "./components/MatrixCanvas.tsx";
+import SideTag from "./components/SideTag.tsx";
 
 type GHUser = {
   name: string | null;
@@ -31,7 +34,6 @@ type GHRepo = {
   updated_at: string;
 };
 
-
 const GITHUB_USERNAME = "Adhishtanaka";
 
 const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension", "sllib", "gemilib"];
@@ -49,61 +51,54 @@ export default function App() {
 
     async function load() {
       try {
-        setLoading(true);
-
-        // Check cache
         const cached = localStorage.getItem(CACHE_KEY);
         if (cached) {
-          const { timestamp, user: cachedUser, repos: cachedRepos } = JSON.parse(cached);
-          if (Date.now() - timestamp < CACHE_EXPIRY) {
-            setUser(cachedUser);
-            setRepos(cachedRepos);
-            setLoading(false);
+          const parsed = JSON.parse(cached);
+          if (Date.now() - parsed.timestamp < CACHE_EXPIRY) {
+            if (isMounted) {
+              setUser(parsed.user);
+              setRepos(parsed.repos);
+              setLoading(false);
+            }
             return;
           }
         }
 
-        // Fetch from GitHub API
-        const [uRes, rRes] = await Promise.all([
-          fetch(`https://api.github.com/users/${GITHUB_USERNAME}`, {
-            headers: { "Accept": "application/vnd.github+json" },
-          }),
-          fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
-            { headers: { "Accept": "application/vnd.github+json" } }
-          ),
+        const [userRes, reposRes] = await Promise.all([
+          fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
+          fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`),
         ]);
 
-        if (!uRes.ok || !rRes.ok) throw new Error("Failed to load GitHub data");
+        if (!userRes.ok || !reposRes.ok) {
+          throw new Error("GitHub API error");
+        }
 
-        const u = (await uRes.json()) as GHUser;
-        const r = (await rRes.json()) as GHRepo[];
+        const userData: GHUser = await userRes.json();
+        const reposData: GHRepo[] = await reposRes.json();
 
-        if (!isMounted) return;
-
-
-        const filteredRepos = r
-          .filter(
-            (repo) =>
-              !repo.name.endsWith(".github.io") &&
-              !SKIP_REPOS.includes(repo.name)
-          )
-          .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
-          .slice(0, 9);
-
-        setUser(u);
-        setRepos(filteredRepos);
-
-        // Save to cache
-        localStorage.setItem(
-          CACHE_KEY,
-          JSON.stringify({ timestamp: Date.now(), user: u, repos: filteredRepos })
+        const filteredRepos = reposData.filter(
+          (repo) => !SKIP_REPOS.includes(repo.name)
         );
-      } catch (e: any) {
-        if (!isMounted) return;
-        setError(e?.message ?? "Something went wrong");
-      } finally {
-        if (isMounted) setLoading(false);
+
+        const sortedRepos = filteredRepos.sort(
+          (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+        ).slice(0, 6);
+
+        if (isMounted) {
+          setUser(userData);
+          setRepos(sortedRepos);
+          setLoading(false);
+          localStorage.setItem(
+            CACHE_KEY,
+            JSON.stringify({ user: userData, repos: sortedRepos, timestamp: Date.now() })
+          );
+        }
+      } catch (e) {
+        console.error(e);
+        if (isMounted) {
+          setError("Failed to load GitHub data");
+          setLoading(false);
+        }
       }
     }
 
@@ -114,55 +109,67 @@ export default function App() {
     };
   }, []);
 
-  const displayName = user?.name || "Adhishtanaka Kulasooriya";
-  const displayBio =
-    user?.bio ||
-    "I am a passionate Computer Science student with a strong foundation in AI integration for software development.";
-
-  const nav = useMemo(
-    () => [
-      { href: "#home", label: "Home" },
-      { href: "#about", label: "About" },
-      { href: "#projects", label: "Projects" },
-      { href: "#achievements", label: "Achievements" },
-      { href: "#contact", label: "Contact" },
-    ],
-    []
-  );
-
   return (
-    <div
-      id="home"
-      className="relative min-h-screen bg-gray-900 text-gray-100 overflow-hidden"
-    >
-      {/* Low opacity gif background overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('./noice.gif')",
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'auto',
-          backgroundPosition: 'center',
-          opacity: 0.06,
-        }}
-      />
-      <div className="relative z-10">
-        <Header nav={nav} githubUrl={user?.html_url} />
+    <div className="relative min-h-screen">
+      {/* Matrix Rain Canvas */}
+      <MatrixCanvas />
+      
+      {/* Side Tag */}
+      <SideTag />
+      
+      {/* Status Bar */}
+      <StatusBar />
+
+      {/* Main Container */}
+      <div className="ml-0 lg:ml-[15vw] px-6 md:px-12 py-24 md:py-20 relative z-10 min-h-screen">
+        {/* Hero Section */}
         <Hero
-          name={displayName}
-          bio={displayBio}
-          avatarUrl={user?.avatar_url}
-          location={user?.location ?? undefined}
+          name={user?.name || "Adhishtanaka Kulasooriya"}
+          bio={user?.bio || "Computer Science Undergraduate & AI Integration Specialist"}
+          location={user?.location}
           repoCount={user?.public_repos}
           followers={user?.followers}
           following={user?.following}
-          cvUrl="./CV.pdf"
+          cvUrl="/CV.pdf"
         />
-        <About />
-        <Projects repos={repos} loading={loading} error={error} />
+
+        {/* ASCII Divider */}
+        <div className="text-center my-20 text-[10px] md:text-xs text-white/20 whitespace-pre font-mono overflow-hidden">
+╔══════════════════════════════════════════════════════════════════╗
+║  CAREER_TIMELINE // EXPERIENCE_LOG // EDUCATION_RECORD             ║
+╚══════════════════════════════════════════════════════════════════╝
+        </div>
+
+        {/* Experience */}
+        <Experience />
+
+        {/* ASCII Divider */}
+        <div className="text-center my-20 text-[10px] md:text-xs text-white/20 whitespace-pre font-mono overflow-hidden">
+╔══════════════════════════════════════════════════════════════════╗
+║  ACHIEVEMENT_LOG // COMPETITIVE_PROGRAMMING // HACKATHON_DATA    ║
+╚══════════════════════════════════════════════════════════════════╝
+        </div>
+
+        {/* Achievements */}
         <Achievements />
+
+        {/* ASCII Divider */}
+        <div className="text-center my-20 text-[10px] md:text-xs text-white/20 whitespace-pre font-mono overflow-hidden">
+╔══════════════════════════════════════════════════════════════════╗
+║  REPOSITORY_MANIFEST // ACTIVE_PROJECTS // SOURCE_CODE_AVAILABLE ║
+╚══════════════════════════════════════════════════════════════════╝
+        </div>
+
+        {/* Projects */}
+        <Projects repos={repos} loading={loading} error={error} />
+
+        {/* Terminal Section */}
+        <Terminal user={user} />
+
+        {/* Contact */}
         <Contact />
+
+        {/* Footer */}
         <Footer />
       </div>
     </div>

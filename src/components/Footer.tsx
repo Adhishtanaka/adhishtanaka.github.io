@@ -1,45 +1,29 @@
 export default function Footer() {
     return (
-        <footer className="border-t border-gray-200 dark:border-gray-700 py-8 bg-white/80 dark:bg-gray-900/80">
-            <div className="mx-auto max-w-6xl px-4 flex flex-col items-center justify-between gap-4 sm:flex-row">
-                <p className="text-xs text-gray-500 dark:text-gray-500">
-                    © {new Date().getFullYear()} Adhish. All rights reserved.
+        <footer className="mt-20 pt-12 border-t-3 border-fg grid grid-cols-1 md:grid-cols-3 gap-8 text-xs md:text-sm">
+            <div className="border-l-2 border-white/10 pl-4">
+                <strong className="block text-amber mb-4 uppercase">System Status</strong>
+                <p className="opacity-80 leading-relaxed">
+                    All systems operational.<br />
+                    Last deployment: 2026-01-31<br />
+                    Framework: Tailwind CSS
                 </p>
-                <div className="flex items-center gap-3 text-xs">
-                    <a
-                        href="https://github.com/Adhishtanaka"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                        GitHub
-                    </a>
-                    <span className="text-gray-400 dark:text-gray-600">•</span>
-                    <a
-                        href="https://www.linkedin.com/in/adhishtanaka/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                        LinkedIn
-                    </a>
-                    <span className="text-gray-400 dark:text-gray-600">•</span>
-                    <a
-                        href="https://x.com/adhishtanaka"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                        X
-                    </a>
-                    <span className="text-gray-400 dark:text-gray-600">•</span>
-                    <a
-                        href="#home"
-                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                        Top
-                    </a>
-                </div>
+            </div>
+            <div className="border-l-2 border-white/10 pl-4">
+                <strong className="block text-amber mb-4 uppercase">Remote Links</strong>
+                <p className="opacity-80 leading-relaxed">
+                    <a href="https://github.com/Adhishtanaka" target="_blank" rel="noreferrer" className="hover:text-matrix transition-colors">github.com/Adhishtanaka</a><br />
+                    <a href="https://linkedin.com/in/adhishtanaka" target="_blank" rel="noreferrer" className="hover:text-matrix transition-colors">linkedin.com/in/adhishtanaka</a><br />
+                    <a href="mailto:kulasoooriyaa@gmail.com" className="hover:text-matrix transition-colors">kulasoooriyaa@gmail.com</a>
+                </p>
+            </div>
+            <div className="border-l-2 border-white/10 pl-4">
+                <strong className="block text-amber mb-4 uppercase">Legal</strong>
+                <p className="opacity-80 leading-relaxed">
+                    © 2026 Adhishtanaka K.<br />
+                    All rights reserved.<br />
+                    <span className="text-matrix">[END OF FILE]</span>
+                </p>
             </div>
         </footer>
     );

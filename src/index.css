@@ -1,1 +1,157 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-bg: #050505;
+  --color-fg: #e6e6e6;
+  --color-alert: #ff2a00;
+  --color-matrix: #00ff41;
+  --color-amber: #ffb000;
+  
+  /* Font Families */
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-sans: "Space Grotesk", sans-serif;
+}
+
+/* Base styles */
+body {
+  background-color: #050505;
+  color: #e6e6e6;
+  cursor: crosshair;
+}
+
+/* SCANLINE OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.2) 50%,
+    rgba(0,0,0,0.2)
+  );
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* NOISE TEXTURE */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* HIDE SCROLLBAR FOR HORIZONTAL SCROLL */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* SIDE TAG ROTATION */
+.side-tag {
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: left center;
+}
+
+/* GLITCH HOVER EFFECT */
+.glitch-hover:hover {
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+/* ACHIEVEMENT CARD STACKING */
+@media (min-width: 768px) {
+  .achievement-card:nth-child(1) {
+    top: 0;
+    left: 10%;
+    transform: rotate(-3deg);
+  }
+  .achievement-card:nth-child(2) {
+    top: 50px;
+    left: 25%;
+    transform: rotate(2deg);
+  }
+  .achievement-card:nth-child(3) {
+    top: 100px;
+    left: 40%;
+    transform: rotate(-1deg);
+  }
+}
+
+/* PROJECT CARD ROTATION */
+@media (min-width: 768px) {
+  .project-card:nth-child(odd) {
+    transform: translateY(20px) rotate(1deg);
+  }
+  .project-card:nth-child(even) {
+    transform: translateY(-20px) rotate(-1deg);
+  }
+}
+
+.project-card:hover {
+  transform: translateY(0) rotate(0) scale(1.02) !important;
+}
+
+/* Blink Animation */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.3; }
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse {
+  animation: pulse 1s infinite;
+}
+
+/* Border utilities */
+.border-3 {
+  border-width: 3px;
+}
+
+.border-t-3 {
+  border-top-width: 3px;
+}
+
+/* Text stroke */
+.text-stroke {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.08);
+}
+
+/* Custom selection */
+::selection {
+  background-color: #ff2a00;
+  color: #050505;
+}
