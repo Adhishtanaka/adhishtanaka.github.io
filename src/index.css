@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-bg: #050505;
-  --color-fg: #e6e6e6;
-  --color-alert: #ff2a00;
-  --color-matrix: #00ff41;
-  --color-amber: #ffb000;
+  /* Colors - Navy Blue Theme */
+  --color-bg: #0a1628;
+  --color-fg: #ffffff;
+  --color-navy: #1e3a5f;
+  --color-navy-light: #2d5a87;
+  --color-navy-dark: #0d1b2a;
+  --color-accent: #4a90d9;
+  --color-accent-light: #6ba3e0;
   
   /* Font Families */
   --font-mono: "IBM Plex Mono", monospace;
@@ -15,8 +17,8 @@
 
 /* Base styles */
 body {
-  background-color: #050505;
-  color: #e6e6e6;
+  background-color: #0a1628;
+  color: #ffffff;
   cursor: crosshair;
 }
 
@@ -87,18 +89,23 @@ body::after {
 @media (min-width: 768px) {
   .achievement-card:nth-child(1) {
     top: 0;
-    left: 10%;
-    transform: rotate(-3deg);
+    left: 8%;
+    transform: rotate(-2deg);
   }
   .achievement-card:nth-child(2) {
-    top: 50px;
-    left: 25%;
-    transform: rotate(2deg);
+    top: 25px;
+    left: 22%;
+    transform: rotate(1.5deg);
   }
   .achievement-card:nth-child(3) {
-    top: 100px;
-    left: 40%;
+    top: 50px;
+    left: 36%;
     transform: rotate(-1deg);
+  }
+  .achievement-card:nth-child(4) {
+    top: 75px;
+    left: 50%;
+    transform: rotate(0.5deg);
   }
 }
 

@@ -39,10 +39,10 @@ export default function MatrixCanvas() {
     function draw() {
       const c = canvasRef.current;
       if (!c || !ctx) return;
-      ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
+      ctx.fillStyle = "rgba(10, 22, 40, 0.05)";
       ctx.fillRect(0, 0, c.width, c.height);
 
-      ctx.fillStyle = "#ff2a00";
+      ctx.fillStyle = "#4a90d9";
       ctx.font = fontSize + 'px "IBM Plex Mono"';
 
       for (let i = 0; i < drops.length; i++) {

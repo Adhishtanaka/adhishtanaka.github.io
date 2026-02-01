@@ -17,16 +17,16 @@ export default function Experience() {
       date: "2026 - Present",
       description: "Currently working at FliAi (Future Life Investments), developing AI-powered solutions and software applications.",
       info: "Employment / Full-time",
-      borderColor: "border-matrix",
-      accentColor: "#00ff41"
+      borderColor: "border-accent",
+      accentColor: "#4a90d9"
     },
     {
-      title: "BSc in Computer Science",
+      title: "BSc (Hons) in Computer Science",
       date: "2022 - 2026",
-      description: "Pursuing a Bachelor's degree in Computer Science, focusing on software engineering, AI, and data science.",
+      description: "Pursuing a Bachelor of Science (Honours) degree in Computer Science, focusing on software engineering, AI, and data science.",
       info: "Education / Undergraduate",
-      borderColor: "border-amber",
-      accentColor: "#ffb000"
+      borderColor: "border-navy-light",
+      accentColor: "#2d5a87"
     }
   ];
 
@@ -36,7 +36,7 @@ export default function Experience() {
         {/* Timeline container */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-fg/20"></div>
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-white/20"></div>
           
           {experiences.map((exp, index) => (
             <div
@@ -55,18 +55,18 @@ export default function Experience() {
               
               {/* Content card */}
               <div 
-                className={`bg-bg border-l-4 ${exp.borderColor} p-5 transition-all duration-300 ${activeIndex === index ? 'translate-x-2' : 'group-hover:translate-x-1'}`}
+                className={`bg-navy border-l-4 ${exp.borderColor} p-5 transition-all duration-300 ${activeIndex === index ? 'translate-x-2' : 'group-hover:translate-x-1'}`}
                 style={{ 
-                  boxShadow: activeIndex === index ? '10px 10px 0px rgba(0,0,0,0.5)' : '5px 5px 0px rgba(0,0,0,0.3)',
+                  boxShadow: activeIndex === index ? '10px 10px 0px rgba(0,0,0,0.3)' : '5px 5px 0px rgba(0,0,0,0.2)',
                 }}
                 onMouseEnter={(e) => {
                   if (activeIndex !== index) {
-                    e.currentTarget.style.boxShadow = '8px 8px 0px rgba(0,0,0,0.4)';
+                    e.currentTarget.style.boxShadow = '8px 8px 0px rgba(0,0,0,0.25)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (activeIndex !== index) {
-                    e.currentTarget.style.boxShadow = '5px 5px 0px rgba(0,0,0,0.3)';
+                    e.currentTarget.style.boxShadow = '5px 5px 0px rgba(0,0,0,0.2)';
                   }
                 }}
               >

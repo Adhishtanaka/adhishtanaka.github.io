@@ -36,7 +36,7 @@ type GHRepo = {
 
 const GITHUB_USERNAME = "Adhishtanaka";
 
-const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension", "sllib", "gemilib"];
+const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension", "sllib", "gemilib", "DISA-MICROSERVICE", "android-action-kernel", "avtxt"];
 
 export default function App() {
   const [user, setUser] = useState<GHUser | null>(null);
@@ -77,7 +77,9 @@ export default function App() {
         const reposData: GHRepo[] = await reposRes.json();
 
         const filteredRepos = reposData.filter(
-          (repo) => !SKIP_REPOS.includes(repo.name)
+          (repo) => !SKIP_REPOS.some(skipName => 
+            repo.name.toLowerCase().replace(/\s/g, '') === skipName.toLowerCase().replace(/\s/g, '')
+          )
         );
 
         const sortedRepos = filteredRepos.sort(
@@ -134,7 +136,7 @@ export default function App() {
         />
 
         {/* ASCII Divider */}
-        <div className="text-center my-20 text-[10px] md:text-xs text-white/20 whitespace-pre font-mono overflow-hidden">
+        <div className="text-center my-20 text-[10px] md:text-xs text-accent/30 whitespace-pre font-mono overflow-hidden">
 ╔══════════════════════════════════════════════════════════════════╗
 ║  CAREER_TIMELINE // EXPERIENCE_LOG // EDUCATION_RECORD             ║
 ╚══════════════════════════════════════════════════════════════════╝
@@ -144,7 +146,7 @@ export default function App() {
         <Experience />
 
         {/* ASCII Divider */}
-        <div className="text-center my-20 text-[10px] md:text-xs text-white/20 whitespace-pre font-mono overflow-hidden">
+        <div className="text-center my-20 text-[10px] md:text-xs text-accent/30 whitespace-pre font-mono overflow-hidden">
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ACHIEVEMENT_LOG // COMPETITIVE_PROGRAMMING // HACKATHON_DATA    ║
 ╚══════════════════════════════════════════════════════════════════╝
@@ -154,7 +156,7 @@ export default function App() {
         <Achievements />
 
         {/* ASCII Divider */}
-        <div className="text-center my-20 text-[10px] md:text-xs text-white/20 whitespace-pre font-mono overflow-hidden">
+        <div className="text-center my-20 text-[10px] md:text-xs text-accent/30 whitespace-pre font-mono overflow-hidden">
 ╔══════════════════════════════════════════════════════════════════╗
 ║  REPOSITORY_MANIFEST // ACTIVE_PROJECTS // SOURCE_CODE_AVAILABLE ║
 ╚══════════════════════════════════════════════════════════════════╝
