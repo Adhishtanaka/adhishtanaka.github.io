@@ -23,8 +23,8 @@ export default function Achievements() {
     {
       title: "Innovate with Ballerina",
       date: "Oct 2025",
-      description: "Top 10 performers among 500+ competing teams in WSO2 Integration Studio & Ballerina hackathon.",
-      participant_info: "Competition / Enterprise Integration",
+      description: "Top 10 performers among 500+ competing teams in WSO2 Ballerina hackathon.",
+      participant_info: "Competition / Oct 2025",
       borderColor: "border-navy-light",
       hoverColor: "group-hover:text-accent"
     },
