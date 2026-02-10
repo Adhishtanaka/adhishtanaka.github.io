@@ -59,6 +59,10 @@ export default function App() {
               setUser(parsed.user);
               setRepos(parsed.repos);
               setLoading(false);
+              // Dispatch render event for prerendering
+              window.dispatchEvent(new Event('render-event'));
+              // @ts-ignore
+              window.renderComplete = true;
             }
             return;
           }
@@ -90,6 +94,10 @@ export default function App() {
           setUser(userData);
           setRepos(sortedRepos);
           setLoading(false);
+          // Dispatch render event for prerendering
+          window.dispatchEvent(new Event('render-event'));
+          // @ts-ignore
+          window.renderComplete = true;
           localStorage.setItem(
             CACHE_KEY,
             JSON.stringify({ user: userData, repos: sortedRepos, timestamp: Date.now() })
@@ -100,6 +108,10 @@ export default function App() {
         if (isMounted) {
           setError("Failed to load GitHub data");
           setLoading(false);
+          // Dispatch render event even on error
+          window.dispatchEvent(new Event('render-event'));
+          // @ts-ignore
+          window.renderComplete = true;
         }
       }
     }
