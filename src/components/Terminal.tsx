@@ -25,7 +25,7 @@ export default function Terminal({ user }: { user: GHUser | null }) {
           Adhishtanaka Kulasooriya [he/him]<br />
           Computer Science Undergraduate<br />
           NSBM Green University, Sri Lanka<br />
-          GPA: 3.80 / 4.00
+          GPA: 3.78 / 4.00
         </div>
 
         <div className="text-accent mb-2 cmd cursor-pointer hover:opacity-80 transition-opacity">
