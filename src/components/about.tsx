@@ -47,7 +47,7 @@ export default function About() {
                                         Bachelor of Computer Science
                                     </p>
                                     <p>NSBM Green University</p>
-                                    <p className="text-xs text-fg/50">2022 — Present | Current GPA: 3.80</p>
+                                    <p className="text-xs text-fg/50">2022 — Present | Current GPA: 3.78</p>
                                 </div>
                             </li>
                         </ol>

@@ -36,7 +36,7 @@ type GHRepo = {
 
 const GITHUB_USERNAME = "Adhishtanaka";
 
-const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension", "sllib", "gemilib", "DISA-MICROSERVICE", "android-action-kernel", "avtxt"];
+const SKIP_REPOS: string[] = ["Intellihack_TetraNeurons_3", "SE-to-ML", "TetraNeurons", "todo-mcp-server", "todo-flutter-app", "git-test", "dwnld", "Adhishtanaka", "dwnld-extension", "sllib", "gemilib", "DISA-MICROSERVICE", "android-action-kernel", "avtxt","adhishtanaka.github.io"];
 
 export default function App() {
   const [user, setUser] = useState<GHUser | null>(null);
