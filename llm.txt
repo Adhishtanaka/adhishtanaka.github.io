@@ -11,7 +11,7 @@
 - **Last Updated**: February 2026
 
 ## About This Site
-This is the personal portfolio website of Adhishtanaka Thiramithu Kulasooriya, a Computer Science undergraduate at NSBM Green University (GPA: 3.80) and AI Integration Specialist. He is highly competitive with proven results, including winning several hackathons and receiving the Best Achievers' Award at TechSpire 2025. The site showcases his skills, projects, experience, and achievements in software development and AI.
+This is the personal portfolio website of Adhishtanaka Thiramithu Kulasooriya, a Computer Science undergraduate at NSBM Green University (GPA: 3.78) and AI Integration Specialist. He is highly competitive with proven results, including winning several hackathons and receiving the Best Achievers' Award at TechSpire 2025. The site showcases his skills, projects, experience, and achievements in software development and AI.
 
 ## Site Purpose
 - Showcase professional background and technical skills in AI and software development
@@ -30,7 +30,7 @@ This is the personal portfolio website of Adhishtanaka Thiramithu Kulasooriya, a
 
 ## Key Sections
 - **Hero**: Professional introduction with name, title, and university information
-- **About**: Personal background, technical skills (TypeScript/Python/C#/Dart, Firebase/Appwrite/Netlify, databases, AI frameworks, web/mobile frameworks), and education (BSc Computer Science, GPA 3.80)
+- **About**: Personal background, technical skills (TypeScript/Python/C#/Dart, Firebase/Appwrite/Netlify, databases, AI frameworks, web/mobile frameworks), and education (BSc Computer Science, GPA 3.78)
 - **Experience**: Professional role at FliAi (2026-Present) and academic journey at NSBM Green University (2022-2026)
 - **Projects**: Dynamic showcase of GitHub repositories with descriptions, star counts, fork counts, and programming languages
 - **Achievements**: Specific competitive accomplishments including TechSpire 2025 Best Achievers' Award, Innovate with Ballerina hackathon (top 10), NSBM GreenEXE 3.0 (1st Runner Up), InteliHack 5.0 (2nd Runner Up)
