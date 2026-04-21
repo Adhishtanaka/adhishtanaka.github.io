@@ -1,41 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/src/index.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="A Computer Science student specializing in AI integration. I develop robust tools to empower developers in building exceptional applications." />
+  <meta name="keywords" content="Adhishtanaka, Thiramithu Kulasooriya, AI, Software Development, Developer, Computer Science" />
+  <meta name="google-site-verification" content="QCl2ik0wOonuyVnHPIOtZ7JKd2r0F5BeO6pW9LmqvDo" />
+  <meta name="msvalidate.01" content="39AA84555460D6877AEA190D7A49C5B1" />
+  <link rel="canonical" href="https://adhishtanaka.github.io/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Adhishtanaka Thiramithu Kulasooriya" />
-  <meta property="og:description"
-    content="A Computer Science student specializing in AI integration. I develop robust tools to empower developers in building exceptional applications." />
+  <meta property="og:description" content="A Computer Science student specializing in AI integration. I develop robust tools to empower developers in building exceptional applications." />
   <meta property="og:url" content="https://adhishtanaka.github.io/" />
   <meta property="og:image" content="https://adhishtanaka.github.io/adhishtanaka.png" />
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Adhishtanaka Thiramithu Kulasooriya" />
-  <meta name="twitter:description"
-    content="A Computer Science student specializing in AI integration. I develop robust tools to empower developers in building exceptional applications." />
+  <meta name="twitter:description" content="A Computer Science student specializing in AI integration. I develop robust tools to empower developers in building exceptional applications." />
   <meta name="twitter:image" content="https://adhishtanaka.github.io/Portfolio/adhishtanaka.png" />
 
-  <!-- Additional Meta Tags -->
-  <meta name="description"
-    content="A Computer Science student specializing in AI integration. I develop robust tools to empower developers in building exceptional applications." />
-  <meta name="keywords"
-    content="Adhishtanaka, Thiramithu Kulasooriya, AI, Software Development, Developer, Computer Science" />
-  <title>Adhishtanaka Kulasooriya - Portfolio</title>
-  <link rel="canonical" href="https://adhishtanaka.github.io/" />
-  <meta name="google-site-verification" content="QCl2ik0wOonuyVnHPIOtZ7JKd2r0F5BeO6pW9LmqvDo" />
-  <meta name="msvalidate.01" content="39AA84555460D6877AEA190D7A49C5B1" />
-  <base target="_blank">
-  
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -53,19 +42,919 @@
   </script>
   
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RR7CJHB55"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RR7CJHB55"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5RR7CJHB55');
+  </script>
 
-  gtag('config', 'G-5RR7CJHB55');
-</script>
+  <title>Adhishtanaka Kulasooriya - Portfolio</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            white: 'var(--forge-white)',
+            forge: {
+              bg:         'var(--forge-bg)',
+              white:      'var(--forge-white)',
+              offwhite:   'var(--forge-offwhite)',
+              light:      'var(--forge-light)',
+              border:     'var(--forge-border)',
+              muted:      'var(--forge-muted)',
+              ink:        'var(--forge-ink)',
+              dark:       'var(--forge-dark)',
+              orange:     '#FF5E00',
+              orangeLight:'#FF7A2E',
+              orangeDark: '#CC4B00',
+            }
+          },
+          fontFamily: {
+            heading: ['Oswald', 'sans-serif'],
+            body:    ['Inter',  'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --forge-bg: #FAFAFA;
+      --forge-white: #ffffff;
+      --forge-offwhite: #F2F2F0;
+      --forge-light: #E8E8E4;
+      --forge-border: #D8D8D4;
+      --forge-muted: #9A9A94;
+      --forge-ink: #2E2E2C;
+      --forge-dark: #1C1C1A;
+    }
+    
+    .dark {
+      --forge-bg: #121212;
+      --forge-white: #1e1e1e;
+      --forge-offwhite: #262626;
+      --forge-light: #333333;
+      --forge-border: #404040;
+      --forge-muted: #a3a3a3;
+      --forge-ink: #f0f0f0;
+      --forge-dark: #ffffff;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    ::selection { background:#FF5E00; color:#fff; }
+    body { font-family:'Inter',sans-serif; background:var(--forge-bg); color:var(--forge-ink); transition: background-color 0.3s, color 0.3s; }
+
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:var(--forge-offwhite); }
+    ::-webkit-scrollbar-thumb { background:#FF5E00; border-radius:3px; }
+
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes pulse-glow {
+      0%,100% { box-shadow:0 0 18px rgba(255,94,0,.25); }
+      50%     { box-shadow:0 0 36px rgba(255,94,0,.55); }
+    }
+    @keyframes marquee {
+      0%   { transform:translateX(0); }
+      100% { transform:translateX(-50%); }
+    }
+
+    .animate-fadeInUp { animation:fadeInUp .75s cubic-bezier(.16,1,.3,1) forwards; }
+    .delay-100 { animation-delay:100ms; }
+    .delay-200 { animation-delay:200ms; }
+    .delay-300 { animation-delay:300ms; }
+    .delay-400 { animation-delay:400ms; }
+
+    .marquee-track { animation:marquee 28s linear infinite; }
+    .marquee-track:hover { animation-play-state:paused; }
+    .glow-btn { animation:pulse-glow 2.2s ease-in-out infinite; }
+
+    /* hero images */
+    .hero-bg-img {
+      filter:grayscale(100%) contrast(1.2) brightness(.65);
+      transition:filter .7s ease;
+    }
+    .hero-bg-img:hover { filter:grayscale(30%) contrast(1.1) brightness(.8); }
+
+    .featured-img {
+      filter:grayscale(70%) contrast(1.1) brightness(.88);
+      transition:all .6s ease;
+    }
+    .featured-img:hover { filter:grayscale(10%) contrast(1) brightness(.95); transform:scale(1.03); }
+
+    /* project cards */
+    .project-card {
+      border:1px solid var(--forge-border);
+      background:var(--forge-white);
+      transition:all .28s ease;
+    }
+    .project-card:hover {
+      border-color:#FF5E00;
+      transform:translateY(-4px);
+      box-shadow:0 16px 36px rgba(255,94,0,.1),0 4px 12px rgba(0,0,0,.06);
+    }
+    .project-img {
+      filter:grayscale(50%) contrast(1.1) brightness(.95);
+      transition:all .5s ease;
+    }
+    .project-card:hover .project-img {
+      filter:grayscale(5%) contrast(1) brightness(1);
+      transform:scale(1.04);
+    }
+
+    /* achievement cards */
+    .achievement-card {
+      border:1px solid var(--forge-border);
+      background:var(--forge-white);
+      transition:all .28s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .achievement-card::after {
+      content:'';
+      position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(90deg,#FF5E00,#FF7A2E);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .3s ease;
+    }
+    .achievement-card:hover::after { transform:scaleX(1); }
+    .achievement-card:hover {
+      border-color:rgba(255,94,0,.3);
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
+    }
+
+    /* stack tiles */
+    .stack-tile {
+      border:1px solid var(--forge-border);
+      background:var(--forge-white);
+      transition:all .22s ease;
+    }
+    .stack-tile:hover {
+      border-color:#FF5E00;
+      box-shadow:0 6px 20px rgba(255,94,0,.12);
+      transform:translateY(-2px);
+    }
+
+    /* nav underline */
+    .nav-link { position:relative; }
+    .nav-link::after {
+      content:''; position:absolute; bottom:-2px; left:0;
+      width:0; height:2px; background:#FF5E00;
+      transition:width .25s ease;
+    }
+    .nav-link:hover::after { width:100%; }
+
+    /* timeline */
+    .tl-line {
+      position:absolute; left:19px; top:0; bottom:0; width:2px;
+      background:linear-gradient(to bottom,#FF5E00,rgba(255,94,0,.07));
+    }
+    .tl-dot {
+      position:absolute; left:12px;
+      width:14px; height:14px; border-radius:50%;
+      border:2px solid #FF5E00; background:var(--forge-white); z-index:2;
+    }
+    .tl-dot.active { background:#FF5E00; box-shadow:0 0 10px rgba(255,94,0,.45); }
+
+    /* shared helpers */
+    .accent-line { width:52px; height:3px; background:linear-gradient(90deg,#FF5E00,#FF7A2E); }
+    .stat-num {
+      background:linear-gradient(135deg,#FF5E00,#FF7A2E);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .badge {
+      font-size:9px; font-weight:700; text-transform:uppercase;
+      letter-spacing:.15em; padding:3px 8px; border:1px solid currentColor;
+    }
+    .lang-dot { width:9px; height:9px; border-radius:50%; display:inline-block; flex-shrink:0; }
+    .section-label { font-size:10px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:#FF5E00; }
+    .toast { animation:fadeInUp .35s ease forwards; }
+
+    /* accordion state */
+    #projects-container.collapsed > div:nth-child(n+10) { display: none; }
+  </style>
+  <script>
+    // System dark mode check
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </head>
+<body>
+  <!-- Theme Toggle -->
+  <button id="themeToggle" onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'; const ic = document.getElementById('themeIcon'); ic.setAttribute('data-icon', document.documentElement.classList.contains('dark') ? 'lucide:sun' : 'lucide:moon'); window.Iconify && Iconify.scan();" class="fixed top-4 right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 z-50 w-12 h-12 rounded-full border border-forge-border bg-forge-white shadow-md flex items-center justify-center text-forge-ink hover:text-forge-orange hover:border-forge-orange transition-all group backdrop-blur-sm bg-opacity-80">
+    <span id="themeIcon" class="iconify group-hover:rotate-12 transition-transform duration-300" data-icon="lucide:moon" data-width="20"></span>
+  </button>
+  <script>
+    if(document.documentElement.classList.contains('dark')) {
+      document.getElementById('themeIcon').setAttribute('data-icon', 'lucide:sun');
+    }
+  </script>
 
-<body class="font-mono overflow-x-hidden antialiased selection:bg-alert selection:text-bg">
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <!-- ABOUT -->
+  <section id="about" class="py-20 md:py-28 bg-forge-offwhite relative overflow-hidden">
+    
+    <!-- Cinematic Integrated Background -->
+    <div class="absolute top-0 right-0 h-full w-full md:w-2/3 lg:w-1/2 opacity-45 pointer-events-none select-none mix-blend-multiply flex justify-end items-center">
+      <div class="relative w-full h-full">
+        <img src="https://github.com/adhishtanaka.png" alt="" class="w-full h-full object-cover object-left md:object-center grayscale contrast-125 transition-transform duration-[2s] hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-r from-forge-offwhite via-forge-offwhite/50 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-forge-offwhite via-transparent to-forge-offwhite"></div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+        <!-- Bio -->
+        <div class="lg:col-span-8">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="accent-line"></div>
+            <span class="section-label">Identity</span>
+          </div>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight text-forge-dark leading-none mb-1">Adhishtanaka</h2>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight text-forge-orange leading-none mb-8">Kulasooriya</h2>
+
+          <p class="text-forge-ink/80 leading-relaxed mb-6 max-w-xl">
+Computer Science undergraduate at NSBM Green University and AI Integration Specialist. I don't just build consumer products—I genuinely enjoy engineering tools and experimental interfaces for fellow developers. 
+          </p>
+
+          <!-- Socials -->
+          <div class="flex items-center flex-wrap gap-4 mb-8">
+            <a href="https://github.com/adhishtanaka" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-[#FAFAFA] hover:bg-forge-dark hover:border-forge-dark transition-all shadow-sm" aria-label="GitHub">
+              <span class="iconify" data-icon="lucide:github" data-width="18"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/adhishtanaka/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-[#FAFAFA] hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all shadow-sm" aria-label="LinkedIn">
+              <span class="iconify" data-icon="lucide:linkedin" data-width="18"></span>
+            </a>
+            <a href="https://x.com/adhishtanaka" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-[#FAFAFA] hover:bg-black hover:border-black transition-all shadow-sm" aria-label="X (Twitter)">
+              <span class="iconify" data-icon="simple-icons:x" data-width="15"></span>
+            </a>
+            <a href="mailto:kulasoooriyaa@gmail.com" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-[#FAFAFA] hover:bg-forge-orange hover:border-forge-orange transition-all shadow-sm" aria-label="Email">
+              <span class="iconify" data-icon="lucide:mail" data-width="18"></span>
+            </a>
+
+            <div id="extra-socials" class="hidden items-center gap-4 origin-left animate-in fade-in zoom-in-95 duration-300">
+              <a href="https://huggingface.co/adhishtanaka" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-black hover:bg-[#FFD21E] hover:border-[#FFD21E] transition-all shadow-sm" aria-label="Hugging Face">
+                <span class="iconify" data-icon="simple-icons:huggingface" data-width="18"></span>
+              </a>
+              <a href="https://www.npmjs.com/~adishtanaka" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-[#FAFAFA] hover:bg-[#CB3837] hover:border-[#CB3837] transition-all shadow-sm" aria-label="NPM">
+                <span class="iconify" data-icon="simple-icons:npm" data-width="18"></span>
+              </a>
+              <a href="https://pypi.org/user/adhishtanaka/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-[#FAFAFA] hover:bg-[#3775A9] hover:border-[#3775A9] transition-all shadow-sm" aria-label="PyPI">
+                <span class="iconify" data-icon="simple-icons:pypi" data-width="18"></span>
+              </a>
+              <a href="https://ollama.com/adhishtanaka" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded border border-forge-border bg-white flex items-center justify-center text-forge-ink hover:text-black hover:bg-forge-dark hover:border-forge-dark transition-all shadow-sm" aria-label="Ollama">
+                <span class="iconify" data-icon="simple-icons:ollama" data-width="18"></span>
+              </a>
+            </div>
+
+            <button onclick="document.getElementById('extra-socials').classList.toggle('hidden'); document.getElementById('extra-socials').classList.toggle('flex'); const ic=this.querySelector('.iconify'); ic.setAttribute('data-icon', ic.getAttribute('data-icon')==='lucide:chevron-right'?'lucide:chevron-left':'lucide:chevron-right'); window.Iconify&&Iconify.scan(this);" class="w-10 h-10 rounded border border-forge-border bg-forge-light flex items-center justify-center text-forge-ink hover:text-forge-orange hover:border-forge-orange transition-all shadow-sm" aria-label="Toggle extra socials border border-dashed hover:border-solid">
+              <span class="iconify" data-icon="lucide:chevron-right" data-width="18"></span>
+            </button>
+          </div>
+
+
+          <!-- Stack tags -->
+          <div class="mt-8">
+            <p class="text-[10px] uppercase tracking-[.25em] text-forge-muted mb-3">Stack</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">TS</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">Python</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">Java</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">Dart</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">Next.js</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">Flutter</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">FastAPI</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">LangChain</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">TensorFlow</span>
+              <span class="text-xs font-semibold px-3 py-1.5 bg-forge-light border border-forge-border text-forge-ink hover:border-forge-orange hover:text-forge-orange transition-all cursor-default">Gemini</span>
+            </div>
+          </div>
+
+          <!-- Quick stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mt-10 mb-10">
+            <div class="bg-white border border-forge-border p-4 md:p-5">
+              <div class="stat-num font-heading text-3xl font-bold">4+</div>
+              <div class="text-[10px] uppercase tracking-[.2em] text-forge-muted mt-1">Hackathon Awards</div>
+            </div>
+            <div class="bg-white border border-forge-border p-4 md:p-5">
+              <div class="stat-num font-heading text-3xl font-bold">500+</div>
+              <div class="text-[10px] uppercase tracking-[.2em] text-forge-muted mt-1">Teams Competed Against</div>
+            </div>
+            <div class="col-span-2 sm:col-span-1 bg-white border border-forge-border p-4 md:p-5">
+              <div class="stat-num font-heading text-3xl font-bold">3+</div>
+              <div class="text-[10px] uppercase tracking-[.2em] text-forge-muted mt-1">Years Building</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="accent-line"></div>
+        <span class="section-label">Experience &amp; Education</span>
+      </div>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight text-forge-dark mb-14">Career<br>Archive</h2>
+
+      <div class="relative pl-12 md:pl-16">
+        <div class="tl-line"></div>
+
+        <!-- FliAi -->
+        <div class="relative mb-10">
+          <div class="tl-dot active" style="top:10px;"></div>
+          <div class="bg-forge-offwhite border border-forge-border p-6 md:p-8 hover:border-forge-orange/40 hover:shadow-md transition-all">
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-2">
+                  <span class="badge text-forge-orange border-forge-orange/35">Employment · Full-Time</span>
+                  <span class="text-[10px] font-bold text-green-600 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 inline-block"></span> Active
+                  </span>
+                </div>
+                <h3 class="font-heading text-2xl md:text-3xl font-bold uppercase text-forge-dark tracking-wide">Junior Software Engineer</h3>
+                <p class="text-forge-orange text-sm font-semibold mt-1">FliAi — Future Life Investments</p>
+              </div>
+              <div class="text-right">
+                <div class="font-heading text-lg font-bold text-forge-dark">2026 — Present</div>
+                <div class="text-[10px] text-forge-muted uppercase tracking-wider mt-1">Current Role</div>
+              </div>
+            </div>
+            <p class="text-sm text-forge-ink/70 leading-relaxed max-w-2xl">
+              Developing AI-powered solutions and software applications at FliAi. Working at the intersection
+              of intelligent systems and product engineering, building tools that leverage modern LLM infrastructure.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="text-xs font-medium px-3 py-1 bg-white border border-forge-border text-forge-ink">AI Systems</span>
+              <span class="text-xs font-medium px-3 py-1 bg-white border border-forge-border text-forge-ink">Full-Stack</span>
+              <span class="text-xs font-medium px-3 py-1 bg-white border border-forge-border text-forge-ink">LLM Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NSBM -->
+        <div class="relative mb-4">
+          <div class="tl-dot" style="top:10px;"></div>
+          <div class="bg-forge-offwhite border border-forge-border p-6 md:p-8 hover:border-forge-orange/40 hover:shadow-md transition-all">
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="badge text-blue-600 border-blue-300">Education · Undergraduate</span>
+                </div>
+                <h3 class="font-heading text-2xl md:text-3xl font-bold uppercase text-forge-dark tracking-wide">BSc (Hons) Computer Science</h3>
+                <p class="text-forge-orange text-sm font-semibold mt-1">NSBM Green University</p>
+              </div>
+              <div class="text-right">
+                <div class="font-heading text-lg font-bold text-forge-dark">2022 — 2026</div>
+                <div class="text-[10px] text-forge-muted uppercase tracking-wider mt-1">Undergraduate</div>
+              </div>
+            </div>
+            <p class="text-sm text-forge-ink/70 leading-relaxed max-w-2xl">
+              Pursuing a Bachelor of Science (Honours) in Computer Science, focusing on software engineering,
+              artificial intelligence, and data science. Actively involved in competitive programming and
+              university hackathons.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="text-xs font-medium px-3 py-1 bg-white border border-forge-border text-forge-ink">Software Engineering</span>
+              <span class="text-xs font-medium px-3 py-1 bg-white border border-forge-border text-forge-ink">AI &amp; ML</span>
+              <span class="text-xs font-medium px-3 py-1 bg-white border border-forge-border text-forge-ink">Data Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="py-20 md:py-28 bg-forge-offwhite">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="accent-line"></div>
+        <span class="section-label">Competitive Record</span>
+      </div>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight text-forge-dark mb-14">Award<br>Manifest</h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div class="achievement-card p-6 md:p-7">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-11 h-11 bg-forge-light border border-forge-border flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-forge-orange" data-icon="lucide:trophy" data-width="20"></span>
+            </div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-1.5">
+                <span class="badge text-forge-orange border-forge-orange/35">Excellence Awards</span>
+                <span class="badge text-forge-muted border-forge-muted/40">NSBM</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold uppercase text-forge-dark tracking-wide">TechSpire 2025</h3>
+              <p class="text-forge-orange text-xs font-bold uppercase tracking-wider mt-0.5">Best Achievers' Award</p>
+            </div>
+          </div>
+          <p class="text-sm text-forge-ink/65 leading-relaxed">
+            Team TetraNeurons won the Best Achievers' Award at TechSpire 2025, the inaugural flagship excellence
+            awards ceremony of NSBM Faculty of Computing.
+          </p>
+          <div class="mt-4 pt-4 border-t border-forge-border flex items-center justify-between">
+            <span class="text-[10px] text-forge-muted">2025</span>
+            <div class="flex gap-1">
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-card p-6 md:p-7">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-11 h-11 bg-forge-light border border-forge-border flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-forge-orange" data-icon="lucide:code-2" data-width="20"></span>
+            </div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-1.5">
+                <span class="badge text-forge-orange border-forge-orange/35">Competition</span>
+                <span class="badge text-forge-muted border-forge-muted/40">Oct 2025</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold uppercase text-forge-dark tracking-wide">Innovate with Ballerina</h3>
+              <p class="text-forge-orange text-xs font-bold uppercase tracking-wider mt-0.5">Top 10 — WSO2 Hackathon</p>
+            </div>
+          </div>
+          <p class="text-sm text-forge-ink/65 leading-relaxed">
+            Ranked top 10 among 500+ competing teams in the WSO2 Ballerina hackathon — a global competition
+            for cloud-native development.
+          </p>
+          <div class="mt-4 pt-4 border-t border-forge-border flex items-center justify-between">
+            <span class="text-[10px] text-forge-muted">Oct 2025 · 500+ teams</span>
+            <div class="flex gap-1">
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-border rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-card p-6 md:p-7">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-11 h-11 bg-forge-light border border-forge-border flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-forge-orange" data-icon="lucide:medal" data-width="20"></span>
+            </div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-1.5">
+                <span class="badge text-forge-orange border-forge-orange/35">Software Engineering</span>
+                <span class="badge text-forge-muted border-forge-muted/40">Oct 2025</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold uppercase text-forge-dark tracking-wide">NSBM GreenEXE 3.0</h3>
+              <p class="text-forge-orange text-xs font-bold uppercase tracking-wider mt-0.5">1st Runner Up — 2nd Place</p>
+            </div>
+          </div>
+          <p class="text-sm text-forge-ink/65 leading-relaxed">
+            Placed 2nd among 50+ teams in NSBM's premier software engineering competition — one of the
+            university's most competitive flagship events.
+          </p>
+          <div class="mt-4 pt-4 border-t border-forge-border flex items-center justify-between">
+            <span class="text-[10px] text-forge-muted">Oct 2025 · 50+ teams</span>
+            <div class="flex gap-1">
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-border rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-card p-6 md:p-7">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-11 h-11 bg-forge-light border border-forge-border flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-forge-orange" data-icon="lucide:brain" data-width="20"></span>
+            </div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-1.5">
+                <span class="badge text-forge-orange border-forge-orange/35">Data Science</span>
+                <span class="badge text-forge-muted border-forge-muted/40">June 2025</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold uppercase text-forge-dark tracking-wide">IntelliHack 5.0</h3>
+              <p class="text-forge-orange text-xs font-bold uppercase tracking-wider mt-0.5">2nd Runner Up — UCSC Datathon</p>
+            </div>
+          </div>
+          <p class="text-sm text-forge-ink/65 leading-relaxed">
+            Placed 3rd at UCSC's IntelliHack 5.0 Datathon, focused on data science and ML model optimisation —
+            one of Sri Lanka's leading ML competitions.
+          </p>
+          <div class="mt-4 pt-4 border-t border-forge-border flex items-center justify-between">
+            <span class="text-[10px] text-forge-muted">June 2025 · UCSC</span>
+            <div class="flex gap-1">
+              <div class="w-2 h-2 bg-forge-orange rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-border rounded-full"></div>
+              <div class="w-2 h-2 bg-forge-border rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="accent-line"></div>
+            <span class="section-label">Public Repositories</span>
+          </div>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight text-forge-dark">Project<br>Arsenal</h2>
+        </div>
+        <p class="text-sm text-forge-muted max-w-sm leading-relaxed">
+          Live repositories fetched from GitHub. Code samples, tools, and experiments built in public.
+        </p>
+      </div>
+
+      <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 collapsed">
+        <div class="project-card overflow-hidden animate-pulse"><div class="p-5"><div class="h-4 bg-forge-light rounded w-3/4 mb-3"></div><div class="h-3 bg-forge-light rounded w-full mb-2"></div><div class="h-3 bg-forge-light rounded w-5/6 mb-5"></div><div class="h-3 bg-forge-light rounded w-1/3"></div></div></div>
+        <div class="project-card overflow-hidden animate-pulse"><div class="p-5"><div class="h-4 bg-forge-light rounded w-3/4 mb-3"></div><div class="h-3 bg-forge-light rounded w-full mb-2"></div><div class="h-3 bg-forge-light rounded w-5/6 mb-5"></div><div class="h-3 bg-forge-light rounded w-1/3"></div></div></div>
+        <div class="project-card overflow-hidden animate-pulse"><div class="p-5"><div class="h-4 bg-forge-light rounded w-3/4 mb-3"></div><div class="h-3 bg-forge-light rounded w-full mb-2"></div><div class="h-3 bg-forge-light rounded w-5/6 mb-5"></div><div class="h-3 bg-forge-light rounded w-1/3"></div></div></div>
+      </div>
+
+      <!-- Show More Accordion -->
+      <div id="projects-more-container" class="mt-8 hidden relative z-10 w-full group cursor-pointer border border-forge-border bg-white hover:border-forge-orange transition-all" id="projects-toggle-btn">
+        <div class="px-6 py-4 flex items-center justify-between" id="projects-toggle-clickarea">
+          <span id="projects-toggle-text" class="text-xs font-bold uppercase tracking-widest text-forge-dark group-hover:text-forge-orange transition-colors">Expand Arsenal</span>
+          <span class="iconify text-forge-orange transition-transform duration-300" id="projects-toggle-icon" data-icon="lucide:chevron-down" data-width="18"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="media-modal" class="fixed inset-0 z-[1000] hidden flex items-center justify-center bg-forge-dark/90 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+    <div class="relative w-full max-w-5xl bg-[#111110] border border-forge-border rounded shadow-2xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300" id="media-modal-content">
+      <button id="close-modal" class="absolute top-4 right-4 md:top-6 md:right-6 text-forge-muted hover:text-white transition-colors z-20 w-9 h-9 flex items-center justify-center rounded-full bg-forge-ink/50 backdrop-blur cursor-pointer hover:bg-forge-orange">
+        <span class="iconify" data-icon="lucide:x" data-width="18"></span>
+      </button>
+      <div id="media-container" class="flex-1 flex items-center justify-center p-4 min-h-[250px] md:min-h-[400px] w-full relative z-10">
+        <!-- Loader or Media goes here -->
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-[100] flex flex-col gap-2.5"></div>
+
+  <script>
+    const GITHUB_USERNAME = 'adhishtanaka';
+    const GITHUB_TOKEN    = '';
+
+    const LANG_COLORS = {
+      JavaScript:'#f1e05a', TypeScript:'#3178c6', Python:'#3572A5',
+      Dart:'#00B4AB', Go:'#00ADD8', Java:'#b07219', HTML:'#e34c26',
+      CSS:'#563d7c', Shell:'#89e051', Rust:'#dea584', 'C++':'#f34b7d',
+      'C#':'#178600', Ruby:'#701516', Swift:'#F05138', Kotlin:'#A97BFF',
+      Vue:'#41b883', Svelte:'#ff3e00',
+    };
+
+    // modal
+    const mediaModal = document.getElementById('media-modal');
+    const mediaModalContent = document.getElementById('media-modal-content');
+    const closeModalBtn = document.getElementById('close-modal');
+    
+    function closeMediaModal() {
+      mediaModal.classList.remove('opacity-100');
+      mediaModalContent.classList.remove('scale-100');
+      setTimeout(() => {
+        mediaModal.classList.add('hidden');
+        document.getElementById('media-container').innerHTML = '';
+      }, 300);
+    }
+    closeModalBtn.onclick = closeMediaModal;
+    mediaModal.onclick = (e) => { if(e.target === mediaModal) closeMediaModal(); };
+
+    function showMediaModal(mediaUrl, mediaType, fallbackUrl) {
+      const container = document.getElementById('media-container');
+      
+      mediaModal.classList.remove('hidden');
+      void mediaModal.offsetWidth;
+      mediaModal.classList.add('opacity-100');
+      mediaModalContent.classList.add('scale-100');
+      
+      const btnLink = `<a href="${fallbackUrl}" target="_blank" class="mt-5 px-6 py-2.5 bg-forge-orange text-white text-[10px] font-bold uppercase tracking-widest rounded hover:bg-forge-orangeDark transition-colors inline-block">Visit GitHub Repository</a>`;
+
+      if (mediaType === 'mp4') {
+        container.innerHTML = `
+          <div class="flex flex-col items-center justify-center w-full">
+            <video controls autoplay loop muted class="max-w-full max-h-[65vh] object-scale-down rounded outline-none border border-forge-border/10 shadow-2xl bg-black/60">
+              <source src="${mediaUrl}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            ${btnLink}
+          </div>`;
+      } else {
+        container.innerHTML = `
+          <div class="flex flex-col items-center justify-center w-full">
+            <img src="${mediaUrl}" alt="Preview" class="max-w-full max-h-[65vh] object-scale-down rounded border border-forge-border/10 shadow-2xl bg-black/60">
+            ${btnLink}
+          </div>`;
+      }
+    }
+
+    async function checkRepoMedia(repoName, defaultBranch = 'main') {
+      const cacheKey = `media_readme_raw_cache_${repoName}_${defaultBranch}`;
+      const CACHE_TIME = 1000 * 60 * 60 * 24; // 1 day
+      
+      try {
+        const cached = localStorage.getItem(cacheKey);
+        if (cached !== null) {
+          const parsed = JSON.parse(cached);
+          if (parsed && typeof parsed === 'object' && parsed.timestamp && (Date.now() - parsed.timestamp < CACHE_TIME)) {
+            return parsed.data;
+          }
+        }
+      } catch (e) {
+        // Fallback for old cache formats or read errors
+      }
+      
+      const variants = [
+        `${defaultBranch}/README.md`, 
+        `${defaultBranch}/readme.md`,
+        `${defaultBranch}/Readme.md`,
+        `${defaultBranch}/README.MD`
+      ];
+
+      let readmeText = null;
+
+      for (const variant of variants) {
+        try {
+          const res = await fetch(`https://raw.githubusercontent.com/${GITHUB_USERNAME}/${repoName}/${variant}`);
+          if (res.ok) {
+            readmeText = await res.text();
+            break;
+          }
+        } catch (e) {
+          // ignore network errors and try next
+        }
+      }
+
+      if (readmeText) {
+        let mediaUrl = null;
+        
+        const absMatch = readmeText.match(/(https?:\/\/[^\s"'()<>\[\]]+\.(?:gif|mp4))/i);
+        if (absMatch) {
+          mediaUrl = absMatch[1];
+        } else {
+          const assetMatch = readmeText.match(/(https?:\/\/(?:github\.com|user-images\.githubusercontent\.com)\/[^\s"'()<>\[\]]+(?:assets|user-attachments)[^\s"'()<>\[\]]+)/i);
+          if (assetMatch) {
+            mediaUrl = assetMatch[1];
+          } else {
+            const relMatch = readmeText.match(/(?:src=["']|!\[.*?\]\()([^"')\]]+\.(?:gif|mp4))/i);
+            if (relMatch) {
+              const p = relMatch[1].replace(/^\.\//, '').replace(/^\//, '');
+              mediaUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${repoName}/${defaultBranch}/${p}`;
+            }
+          }
+        }
+
+        // Verify the extracted media URL actually exists (not a 404)
+        if (mediaUrl) {
+          try {
+            const check = await fetch(mediaUrl, { method: 'HEAD' });
+            if (!check.ok) mediaUrl = null; // if 404 or broken, nullify it
+          } catch (e) {
+            // If blocked by CORS, assume it exists and proceed safely
+          }
+        }
+
+        if (mediaUrl) {
+          const isMp4 = mediaUrl.toLowerCase().endsWith('.mp4') || (mediaUrl.includes('/assets/') && !mediaUrl.toLowerCase().endsWith('.gif'));
+          const m = { url: mediaUrl, type: isMp4 ? 'mp4' : 'img' };
+          
+          try {
+            localStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data: m }));
+          } catch (e) {
+            // Ignore quota errors
+          }
+          
+          return m;
+        }
+      }
+      
+      try {
+        localStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data: null }));
+      } catch (e) {}
+      
+      return null;
+    }
+
+    // toast
+    function showToast(msg, type='info') {
+      const border = {info:'border-forge-border',error:'border-red-200',success:'border-green-200'}[type];
+      const icon   = {info:'lucide:info',error:'lucide:alert-circle',success:'lucide:check-circle'}[type];
+      const tc = document.getElementById('toastContainer');
+      const t  = document.createElement('div');
+      t.className = `toast bg-white border ${border} shadow-md px-4 py-3 text-xs text-forge-ink flex items-center gap-2.5 min-w-[220px]`;
+      t.innerHTML = `<span class="iconify text-forge-orange" data-icon="${icon}" data-width="14"></span><span>${msg}</span>`;
+      tc.appendChild(t);
+      if (window.Iconify) Iconify.scan(t);
+      setTimeout(() => t.remove(), 4000);
+    }
+
+    // github
+    async function fetchGitHubData() {
+      const CACHE_KEY = `github_data_v2_${GITHUB_USERNAME}`;
+      const CACHE_TIME = 1000 * 60 * 60 * 24; // 1 day
+
+      try {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (Date.now() - parsed.timestamp < CACHE_TIME) {
+            return parsed.data;
+          }
+        }
+      } catch (e) { console.warn('Cache read error', e); }
+
+      try {
+        const data = GITHUB_TOKEN ? await fetchGraphQL() : await fetchREST();
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
+        } catch (e) { console.warn('Cache write error', e); }
+        return data;
+      } catch(e) { console.error(e); showToast('GitHub: ' + e.message, 'error'); return null; }
+    }
+
+    async function fetchGraphQL() {
+      const query = `query($u:String!){user(login:$u){repositories(first:100,privacy:PUBLIC,orderBy:{field:STARGAZERS,direction:DESC}){totalCount nodes{name description url stargazerCount forkCount languages(first:1){nodes{name color}} openGraphImageUrl defaultBranchRef{name} updatedAt}}}}`;
+      const res = await fetch('https://api.github.com/graphql',{method:'POST',headers:{'Authorization':`bearer ${GITHUB_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({query,variables:{u:GITHUB_USERNAME}})});
+      const r = await res.json();
+      if (r.errors) throw new Error(r.errors[0].message);
+      let mapped = r.data.user.repositories.nodes.map(repo => ({
+         ...repo,
+         defaultBranch: repo.defaultBranchRef ? repo.defaultBranchRef.name : 'main'
+      }));
+      mapped.sort((a,b) => b.stargazerCount - a.stargazerCount || new Date(b.updatedAt) - new Date(a.updatedAt));
+      mapped = mapped.slice(0, 30);
+      return { repos: mapped, totalRepos: r.data.user.repositories.totalCount };
+    }
+
+    async function fetchREST() {
+      const H = {'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+      const [rr, ur] = await Promise.all([
+        fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`,{headers:H}),
+        fetch(`https://api.github.com/users/${GITHUB_USERNAME}`,{headers:H})
+      ]);
+      if (rr.status===403||rr.status===429) { const reset=rr.headers.get('X-RateLimit-Reset'); throw new Error(`Rate limit hit. Resets at ${reset?new Date(reset*1000).toLocaleTimeString():'soon'}.`); }
+      if (!rr.ok) throw new Error(`GitHub ${rr.status}: ${rr.statusText}`);
+      const repos=await rr.json(); const user=await ur.json();
+      let mapped = repos.map(r=>({
+          name:r.name, description:r.description, url:r.html_url,
+          stargazerCount:r.stargazers_count, forkCount:r.forks_count,
+          languages:{nodes:[{name:r.language,color:LANG_COLORS[r.language]||'#aaa'}]},
+          openGraphImageUrl:`https://opengraph.githubassets.com/1/${r.full_name}`,
+          defaultBranch: r.default_branch || 'main',
+          updatedAt: r.updated_at
+      }));
+      mapped.sort((a,b) => b.stargazerCount - a.stargazerCount || new Date(b.updatedAt) - new Date(a.updatedAt));
+      mapped = mapped.slice(0, 30);
+      return {
+        totalRepos: user.public_repos,
+        repos: mapped
+      };
+    }
+
+    function renderProjects(repos) {
+      const c=document.getElementById('projects-container'); if(!c) return;
+      c.innerHTML='';
+      repos.forEach(repo=>{
+        const lang=repo.languages?.nodes?.[0];
+        const lc=lang?.color||LANG_COLORS[lang?.name]||'#aaa';
+        const card=document.createElement('div');
+        card.className='project-card overflow-hidden flex flex-col cursor-pointer transition-all hover:scale-[1.01]';
+        card.onclick = (e) => {
+          if (e.target.closest('a')) return;
+          if (repo.mediaUrl) {
+            showMediaModal(repo.mediaUrl, repo.mediaType, repo.url);
+          } else {
+            window.open(repo.url, '_blank');
+          }
+        };
+        card.innerHTML=`
+          <div class="p-5 flex flex-col flex-1 relative">
+            <div class="flex items-center justify-between mb-3">
+              ${lang?.name?`<div class="flex items-center gap-1.5"><span class="lang-dot" style="background:${lc}"></span><span class="text-[10px] font-bold uppercase tracking-wider text-forge-muted">${lang.name}</span></div>`:`<div></div>`}
+              ${repo.mediaUrl ? `<span class="flex items-center gap-1 text-[9px] font-bold uppercase tracking-widest text-forge-orange border border-forge-orange/30 px-2 py-0.5 rounded-sm bg-forge-orange/5"><span class="iconify" data-icon="lucide:play-circle" data-width="10"></span> Video</span>` : ''}
+            </div>
+            <h3 class="font-heading text-lg font-bold uppercase tracking-wide text-forge-dark mb-2 leading-tight">${repo.name}</h3>
+            <p class="text-xs text-forge-muted leading-relaxed flex-1 mb-4">${repo.description||'No description available'}</p>
+            <div class="flex items-center justify-between pt-3 border-t border-forge-border">
+              <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1 text-xs text-forge-ink font-medium">
+                  <span class="iconify text-forge-orange" data-icon="lucide:star" data-width="12"></span>${repo.stargazerCount}
+                </span>
+                <span class="flex items-center gap-1 text-xs text-forge-muted">
+                  <span class="iconify" data-icon="lucide:git-fork" data-width="12"></span>${repo.forkCount}
+                </span>
+              </div>
+              <a href="${repo.url}" target="_blank" class="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-forge-orange hover:text-forge-orangeDark transition-colors pointer-events-auto relative z-10">
+                GitHub <span class="iconify" data-icon="lucide:external-link" data-width="10"></span>
+              </a>
+            </div>
+          </div>`;
+        c.appendChild(card);
+      });
+      if (window.Iconify) Iconify.scan(c);
+    }
+
+    (async()=>{
+      const isLocal=location.protocol==='file:';
+      if(isLocal) showToast('Deploy to GitHub Pages for live repo data','info');
+
+      const data=await fetchGitHubData();
+      if(!data){
+        document.getElementById('projects-container').innerHTML=`
+          <div class="col-span-full py-16 text-center">
+            <p class="text-forge-muted text-sm mb-1">Could not load repositories.</p>
+            ${isLocal?'<p class="text-forge-muted text-xs mt-1">Browsers block API calls from local files.<br>Use <code class="text-forge-orange">npx serve .</code> or deploy to GitHub Pages.</p>':''}
+          </div>`;
+        return;
+      }
+      
+      const hiddenRepos = ['disa-microservice', 'android-action-kernel', 'sllib', 'gemilib', 'space', 'tetraneurons', 'se-to-ml', 'moltibook-http', 'ams', 'avtxt', 'intellihack_tetraneurons_3', 'pm3', 'dwnld', 'adhishtanaka'];
+      const filteredRepos = data.repos
+        .filter(repo => repo.description && repo.description.trim() !== '' && !hiddenRepos.includes(repo.name.toLowerCase()));
+      
+      showToast('Preloading project media...', 'info');
+      await Promise.all(filteredRepos.map(async (repo) => {
+        const media = await checkRepoMedia(repo.name, repo.defaultBranch);
+        if (media) {
+          repo.mediaUrl = media.url;
+          repo.mediaType = media.type;
+          if (media.type === 'img') {
+            const img = new Image(); img.src = media.url;
+          }
+        }
+      }));
+
+      // Apply highly specific score-based sorting
+      filteredRepos.forEach(repo => {
+        let score = 0;
+        // 1. Huge plus for stars (e.g. 5000 points per star)
+        if (repo.stargazerCount > 0) score += repo.stargazerCount * 5000;
+        
+        // 2. Plus for forks (matters, but less than stars: 2000 points per fork)
+        if (repo.forkCount > 0) score += repo.forkCount * 2000;
+        
+        // 3. Huge plus if it has a video/gif attached (brings good UX up)
+        if (repo.mediaUrl) score += 3000;
+        
+        // 4. Plus for recent activity (0 to 1000 points max based on how new it is)
+        if (repo.updatedAt) {
+          const daysOld = (Date.now() - new Date(repo.updatedAt).getTime()) / (1000 * 60 * 60 * 24);
+          score += Math.max(0, 1000 - (daysOld * 2));
+        }
+        repo._sortScore = score;
+      });
+
+      // Sort by score descending
+      filteredRepos.sort((a, b) => b._sortScore - a._sortScore);
+
+      renderProjects(filteredRepos);
+      
+      // Setup Accordion (Show More) Logic
+      const projectContainer = document.getElementById('projects-container');
+      const moreBtnContainer = document.getElementById('projects-more-container');
+      const toggleBtn = document.getElementById('projects-toggle-clickarea');
+      const toggleText = document.getElementById('projects-toggle-text');
+      const toggleIcon = document.getElementById('projects-toggle-icon');
+      
+      if (filteredRepos.length > 9) {
+        moreBtnContainer.classList.remove('hidden');
+        toggleBtn.addEventListener('click', () => {
+          const isCollapsed = projectContainer.classList.contains('collapsed');
+          if (isCollapsed) {
+            projectContainer.classList.remove('collapsed');
+            toggleText.textContent = 'Collapse Arsenal';
+            toggleIcon.style.transform = 'rotate(180deg)';
+          } else {
+            projectContainer.classList.add('collapsed');
+            toggleText.textContent = 'Expand Arsenal';
+            toggleIcon.style.transform = 'rotate(0deg)';
+            document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }); // Scroll back up
+          }
+        });
+      }
+
+      showToast(`Loaded ${filteredRepos.length} repositories`,'success');
+    })();
+  </script>
 </body>
-
 </html>
