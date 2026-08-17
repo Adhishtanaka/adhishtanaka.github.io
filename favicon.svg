@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">AK monogram</title>
+  <rect width="64" height="64" rx="15" fill="#151a17"/>
+  <path d="M10 46 23 17l13 29M15 36h16" fill="none" stroke="#f5f3ed" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M39 17v29M56 17 40 32l17 14" fill="none" stroke="#f5f3ed" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="55" cy="9" r="4" fill="#9ac9ae"/>
+</svg>
