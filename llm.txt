@@ -2,9 +2,9 @@
 
 ## Metadata
 - **Author**: Adhishtanaka Thiramithu Kulasooriya
-- **Title**: ADHISHTANAKA_KULASOORIYA - Computer Science Portfolio
+- **Title**: Adhishtanaka Kulasooriya | Associate Software Engineer
 - **Description**: Personal portfolio of an Associate Software Engineer at FliAi, showcasing software projects, professional experience, and hackathon achievements
-- **Keywords**: AI integration, computer science, software development, React, TypeScript, hackathons, machine learning, full-stack development
+- **Keywords**: Associate Software Engineer, FliAi, AI integration, software engineering, TypeScript, Python, hackathons, full-stack development
 - **Language**: English
 - **Content Type**: Personal Portfolio Website
 - **Target Audience**: Employers, collaborators, developers, AI researchers
@@ -22,11 +22,11 @@ This is the personal portfolio website of Adhishtanaka Thiramithu Kulasooriya, a
 - Provide a way to get in touch
 
 ## Site Structure & Navigation
-- **Single Page Application**: Smooth scrolling navigation between sections
+- **Single-page portfolio**: Semantic HTML with smooth scrolling navigation between sections
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Dark Theme**: Navy blue and accent color scheme with terminal-inspired aesthetics
-- **Interactive Elements**: Animated components using Framer Motion
-- **Performance Optimized**: Built with Vite for fast loading times
+- **Visual Design**: Charcoal green, warm cream, and muted mint editorial theme
+- **Interactive Elements**: Lightweight CSS transitions and native JavaScript reveal effects
+- **Performance Optimized**: Static HTML, CSS, and JavaScript deployed through GitHub Pages
 
 ## Key Sections
 - **Hero**: Professional introduction with name, title, and university information
@@ -37,12 +37,10 @@ This is the personal portfolio website of Adhishtanaka Thiramithu Kulasooriya, a
 - **Contact**: Direct email contact via kulasoooriyaa@gmail.com with interactive contact button
 
 ## Technologies Used
-- **Frontend Framework**: React 19 with TypeScript for type-safe development
-- **Build Tool**: Vite for fast development and optimized production builds
-- **Styling**: Tailwind CSS 4.0 for utility-first CSS framework
-- **Animations**: Framer Motion for smooth, performant animations
-- **Icons**: Lucide React for consistent, accessible iconography
-- **HTTP Client**: Axios for API communications
+- **Frontend**: Semantic HTML5, responsive CSS, and vanilla JavaScript
+- **Typography**: Newsreader, Manrope, and DM Mono web fonts
+- **Animations**: CSS transitions with reduced-motion support
+- **Data Source**: GitHub REST API for live repository and profile information
 - **Deployment**: GitHub Pages with automated deployment via GitHub Actions
 - **Version Control**: Git with GitHub for collaboration and code management
 
@@ -66,7 +64,7 @@ This is the personal portfolio website of Adhishtanaka Thiramithu Kulasooriya, a
 - **GitHub**: https://github.com/adhishtanaka (source code and projects)
 - **LinkedIn**: Available through contact section (professional network)
 - **Email**: kulasoooriyaa@gmail.com (direct communication)
-- **CV/Resume**: Available at /cv.pdf (detailed professional background)
+- **CV/Resume**: Available at /CV.pdf (detailed professional background)
 - **Portfolio URL**: https://adhishtanaka.github.io (main website)
 
 ## Performance & Accessibility
